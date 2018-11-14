@@ -1,8 +1,11 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
+import './dashboard.css';
+
 import Sidebar from '../../components/sidebar';
 import Navigation from '../../components/navigation';
+import Selection from './selection';
 
 function mapStateToProps(state) {
   return {
@@ -18,8 +21,9 @@ class Dashboard extends Component {
         <Navigation />
 
         <Sidebar />
-
-        
+        <section className="dashboard">
+          <Selection />
+        </section>
         
       </div>
     );

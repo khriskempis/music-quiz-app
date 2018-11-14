@@ -5,13 +5,15 @@ import './index.css';
 import store from './store';
 import Landing from './pages/Landing/Landing';
 import Test from './pages/Test/Test';
+import Register from './pages/Register/Register';
+import Results from './pages/Results/Results';
 import Dashboard from "./pages/Dashboard/Dashboard";
 
 import * as serviceWorker from './serviceWorker';
 
 ReactDOM.render(
   <Provider store={store}>
-    <Dashboard />
+    <Results />
   </Provider>, 
 document.getElementById('root')
 );

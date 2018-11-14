@@ -13,15 +13,8 @@ function sidebar(props) {
           </div>
 
           <ul>
-            <li><a href="#">Home</a></li>
-            <li><a href="#">Take a Test</a></li>
             <li><a href="#">Practice</a></li>
-            <li><a href="#">History</a></li>
-          </ul>
-          <h4>Daily Goals</h4>
-          <ul>
-            <li>Score 90% or more</li>
-            <li>Complete 2 Tests</li>
+            <li><a href="#">Take a Test</a></li>
           </ul>
         </div>
       </section>
@@ -29,6 +22,6 @@ function sidebar(props) {
     </div>
   );
 
-  }
+}
 
 export default sidebar

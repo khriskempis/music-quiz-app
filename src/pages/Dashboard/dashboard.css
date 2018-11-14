@@ -1,0 +1,23 @@
+.dashboard {
+  margin-left: 20%;
+}
+
+.test-area {
+  margin: 5rem;
+  width: 70%;
+}
+
+.test-area header {
+  width: 100%; 
+}
+
+.options-buttons {
+  margin: 10% 0 2%;
+}
+
+.options-buttons button {
+  display: inline-block;
+  width: 100%;
+  margin: 2% 0;
+  padding: 2%;
+}
