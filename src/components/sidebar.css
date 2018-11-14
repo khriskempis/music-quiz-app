@@ -1,0 +1,34 @@
+.sidebar-links {
+  padding: 0;
+  position: fixed;
+  left: 0;
+  top: 5rem;
+  bottom: 5rem;
+  width: 20%;
+  height: 80vh;
+  border-right: 1px solid #aaa
+}
+.sidebar-links ul {
+  margin: 1rem;
+}
+
+.sidebar-links li {
+  margin: 1rem;
+}
+.user-image {
+  border: 1px solid #aaa;
+  border-radius: 100%;
+  width: 8rem;
+  height: 8rem;
+  text-align: center;
+  margin: 2rem;
+  padding-top: 1.5rem;
+}
+
+.user-image p {
+  display: block;
+}
+
+.sidebar-links ul {
+  list-style: none;
+}

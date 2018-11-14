@@ -1,0 +1,22 @@
+label, input {
+  width: 100%;
+  padding: 2% 0;
+  margin: 2% 0; 
+}
+
+.register-form {
+  text-align: left;
+}
+
+.register-form button {
+  width: 100%;
+  padding: 2% 0;
+  margin: 2% 0; 
+  border: none;
+  margin: 5% 0.5%;
+}
+
+.register-form-container {
+  max-width: 30%;
+  margin: 0 auto;
+}
