@@ -1,32 +1,48 @@
-import React from 'react';
-
 import './Test.css';
 
-class testForm extends React.Component {
+import React, { Component } from 'react';
+import { connect } from 'react-redux';
+
+const mapStateToProps = state => ({
+  numberOfQuestions: state.testData.numberOfQuestions,
+  currentQuestion: state.testData.currentQuestion,
+  data: "",
+})
+
+export class testForm extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      imgUrl: '',
+      cardId: 1,
+      note: "A"
+    }
+  }
+
   render() {
     return (
       <div>
         <form className="test-container">
-          <div class="test-timer">
+          <div className="test-timer">
               <p>4:30</p>
             </div>
 
-            <div class="test-question-number">
-              <p>4/20</p>
+            <div className="test-question-number">
+              <p><span>{this.props.currentQuestion}</span>/<span>{this.props.numberOfQuestions}</span></p>
             </div>
 
-            <div class="test-question">
+            <div className="test-question">
               <img src="" alt="picture of music note"/>
             </div>
 
-            <div class="answers-container">
+            <div className="answers-container">
               <button>A</button>
               <button>G</button>
               <button>D</button>
               <button>C</button>
             </div>
 
-            <button class="test-next">Next</button>
+            <button className="test-next">Next</button>
 
         </form>
       </div>
@@ -34,4 +50,6 @@ class testForm extends React.Component {
   }
 }
 
-export default testForm
+export default connect(
+  mapStateToProps,
+)(testForm);

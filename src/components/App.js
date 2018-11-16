@@ -1,15 +1,25 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
+import {BrowserRouter as Router, Route } from 'react-router-dom';
+
+import Landing from '../pages/Landing/Landing';
+import Test from '../pages/Test/Test';
+import Dashboard from "../pages/Dashboard/Dashboard";
+
 import './App.css';
 
-class App extends Component {
-  render() {
-    return (
+function App(props){
+  return (
+    <Router>
       <div className="App">
-        
-      </div>
-    );
-  }
+        <main>
+          <Route exact path="/" component={Landing} />
+          <Route path="/test" component={Test} />
+          <Route path="/dashboard" component={Dashboard} />
+          
+        </main>
+      </div>  
+    </Router>
+  );
 }
 
 export default App;

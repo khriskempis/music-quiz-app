@@ -3,17 +3,13 @@ import ReactDOM from 'react-dom';
 import {Provider} from 'react-redux';
 import './index.css';
 import store from './store';
-import Landing from './pages/Landing/Landing';
-import Test from './pages/Test/Test';
-import Register from './pages/Register/Register';
-import Results from './pages/Results/Results';
-import Dashboard from "./pages/Dashboard/Dashboard";
+import App from './components/App';
 
 import * as serviceWorker from './serviceWorker';
 
 ReactDOM.render(
   <Provider store={store}>
-    <Results />
+    <App />
   </Provider>, 
 document.getElementById('root')
 );
