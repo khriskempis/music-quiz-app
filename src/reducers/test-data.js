@@ -12,10 +12,25 @@ const initialState = {
   correctAnswers: [],
   data: [
     {
-      imgUrl: "imgs/BASS/A_1@2x-80.jpg",
-      cardId: 1,
+      imgUrl: "../../imgs/BASS/JPGs/A2.jpg",
+      cardId: "A2",
       note: "A"
     },
+    {
+      imgUrl: "../../imgs/BASS/JPGs/A3.jpg",
+      cardId: "A3",
+      note: "A"
+    },
+    {
+      imgUrl: "../../imgs/BASS/JPGs/B2.jpg",
+      cardId: "B2",
+      note: "B"
+    },
+    {
+      imgUrl: "../../imgs/BASS/JPGs/B3.jpg",
+      cardId: "B3",
+      note: "B"
+    }
   ]
 }
 

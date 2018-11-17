@@ -1,15 +1,14 @@
 import React, { Component } from 'react';
-import { connect } from 'react-redux';
 import { reduxForm, Field, focus} from 'redux-form';
 import {Link} from 'react-router-dom';
 
 import './registerForm.css';
 
-function mapStateToProps(state) {
-  return {
+// function mapStateToProps(state) {
+//   return {
 
-  };
-}
+//   };
+// }
 
 class registerForm extends Component {
   render() {

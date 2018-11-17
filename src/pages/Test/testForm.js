@@ -6,22 +6,77 @@ import { connect } from 'react-redux';
 const mapStateToProps = state => ({
   numberOfQuestions: state.testData.numberOfQuestions,
   currentQuestion: state.testData.currentQuestion,
-  data: "",
+  data: state.testData.data,
 })
 
-export class testForm extends React.Component {
+export class testForm extends Component {
   constructor(props) {
     super(props);
     this.state = {
       imgUrl: '',
       cardId: 1,
-      note: "A"
-    }
+      note: "",
+      answers: [],
+    };
+    this.logging = this.logging.bind(this);
   }
 
-  render() {
+  componentDidMount(){
+    this.generateQuestion();
+  }
+
+  generateRandomIndex(length){
+    return Math.floor(Math.random() * length)
+  }
+
+  generateQuestion(){
+    const randomIndex = this.generateRandomIndex(this.props.data.length)
+    const noteCard = this.props.data[randomIndex]
+    this.setState((state) => {
+       return {
+        imgUrl: noteCard.imgUrl,
+        cardId: noteCard.cardId,
+        note: noteCard.note
+      }
+    });
+    console.log(this.props.data[randomIndex]);
+    this.generateAnswers();
+  }
+
+  generateAnswers(){
+    let availableAnswers = ["A", "B", "C", "D", "E", "F", "G"]
+    let answers = [];
+    let correctAnswer = this.state.note;
+    answers.push(correctAnswer);
+    while(answers.length < 4){
+      let answer = availableAnswers.splice(this.generateRandomIndex(availableAnswers.length), 1);
+      if (correctAnswer !== answer.join()) {
+        answers.push(answer);
+      }
+    }
+    this.setAnswers(answers.flat());
+    
+  }
+
+  setAnswers(array){
+    this.setState({
+      answers: array
+    })
+  }
+
+
+  logging() {
+    console.log(this.state);
+  }
+
+  
+
+  render() {   
+
+
     return (
       <div>
+        <button onClick={this.logging}>Log</button>
         <form className="test-container">
           <div className="test-timer">
               <p>4:30</p>
@@ -32,14 +87,11 @@ export class testForm extends React.Component {
             </div>
 
             <div className="test-question">
-              <img src="" alt="picture of music note"/>
+              <img src={this.state.imgUrl} alt="music note"/>
             </div>
 
             <div className="answers-container">
-              <button>A</button>
-              <button>G</button>
-              <button>D</button>
-              <button>C</button>
+              
             </div>
 
             <button className="test-next">Next</button>

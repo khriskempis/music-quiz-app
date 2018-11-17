@@ -1,4 +1,5 @@
 import React from 'react';
+import {Link} from 'react-router-dom';
 
 import './sidebar.css';
 
@@ -13,8 +14,7 @@ function sidebar(props) {
           </div>
 
           <ul>
-            <li><a href="#">Practice</a></li>
-            <li><a href="#">Take a Test</a></li>
+            <li><Link to="/dashboard">Practice</Link></li>
           </ul>
         </div>
       </section>
