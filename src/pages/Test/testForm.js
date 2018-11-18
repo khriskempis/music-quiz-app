@@ -3,6 +3,11 @@ import './Test.css';
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
+import MultipleChoice from './multipleChoice';
+import Timer from './timer';
+import QuestionNumber from './question-number';
+import NoteImg from './noteImg'
+
 const mapStateToProps = state => ({
   numberOfQuestions: state.testData.numberOfQuestions,
   currentQuestion: state.testData.currentQuestion,
@@ -14,7 +19,7 @@ export class testForm extends Component {
     super(props);
     this.state = {
       imgUrl: '',
-      cardId: 1,
+      cardId: '',
       note: "",
       answers: [],
     };
@@ -32,15 +37,13 @@ export class testForm extends Component {
   generateQuestion(){
     const randomIndex = this.generateRandomIndex(this.props.data.length)
     const noteCard = this.props.data[randomIndex]
-    this.setState((state) => {
-       return {
+    this.setState({
         imgUrl: noteCard.imgUrl,
         cardId: noteCard.cardId,
-        note: noteCard.note
-      }
-    });
-    console.log(this.props.data[randomIndex]);
-    this.generateAnswers();
+        note: noteCard.note 
+    },
+    this.generateAnswers
+    );
   }
 
   generateAnswers(){
@@ -54,15 +57,22 @@ export class testForm extends Component {
         answers.push(answer);
       }
     }
-    this.setAnswers(answers.flat());
-    
+    this.setAnswers(this.shuffleAnswers(answers.flat()));
+  }
+
+  shuffleAnswers(array){
+    const shuffledAnswers = [];
+    for(let i=0; i < 4; i++){
+      shuffledAnswers.push(array.splice(this.generateRandomIndex(array.length), 1));
+    }
+    return shuffledAnswers.flat();
   }
 
   setAnswers(array){
     this.setState({
       answers: array
     })
-  }
+  };
 
 
   logging() {
@@ -73,28 +83,16 @@ export class testForm extends Component {
 
   render() {   
 
-
     return (
       <div>
         <button onClick={this.logging}>Log</button>
         <form className="test-container">
-          <div className="test-timer">
-              <p>4:30</p>
-            </div>
+          <Timer />
+          <QuestionNumber />
 
-            <div className="test-question-number">
-              <p><span>{this.props.currentQuestion}</span>/<span>{this.props.numberOfQuestions}</span></p>
-            </div>
+          <NoteImg imgUrl='../../imgs/BASS/JPGs/A2.jpg'/>
 
-            <div className="test-question">
-              <img src={this.state.imgUrl} alt="music note"/>
-            </div>
-
-            <div className="answers-container">
-              
-            </div>
-
-            <button className="test-next">Next</button>
+          <MultipleChoice answers={this.state.answers}/>
 
         </form>
       </div>
@@ -102,6 +100,4 @@ export class testForm extends Component {
   }
 }
 
-export default connect(
-  mapStateToProps,
-)(testForm);
+export default connect(mapStateToProps)(testForm);

@@ -6,28 +6,29 @@ import {
 } from '../actions/test-data';
 
 const initialState = {
-  numberOfQuestions: 20,
-  currentQuestion: 1,
+  numberOfQuestions: 10,
+  currentQuestion: 10,
+  testName: "Treble Clef",
   wrongAnswers: [],
   correctAnswers: [],
   data: [
     {
-      imgUrl: "../../imgs/BASS/JPGs/A2.jpg",
+      imgUrl: "../imgs/BASS/JPGs/A2.jpg",
       cardId: "A2",
       note: "A"
     },
     {
-      imgUrl: "../../imgs/BASS/JPGs/A3.jpg",
+      imgUrl: "../imgs/BASS/JPGs/A3.jpg",
       cardId: "A3",
       note: "A"
     },
     {
-      imgUrl: "../../imgs/BASS/JPGs/B2.jpg",
+      imgUrl: "../imgs/BASS/JPGs/B2.jpg",
       cardId: "B2",
       note: "B"
     },
     {
-      imgUrl: "../../imgs/BASS/JPGs/B3.jpg",
+      imgUrl: "../imgs/BASS/JPGs/B3.jpg",
       cardId: "B3",
       note: "B"
     }

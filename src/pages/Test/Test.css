@@ -44,10 +44,10 @@
   margin: 0.5rem 0
 }
 
-.test-next {
-  position: absolute;
-  right: 3rem;
-  bottom: -3rem;
+.test-button {
+  position: relative;
+  right: 0;
+  bottom: 2rem;
   padding: 0.5rem 2rem;
   border-radius: 5px;
 }

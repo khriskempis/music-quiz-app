@@ -1,37 +1,44 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { connect } from 'react-redux';
+import { Link } from 'react-router-dom'
 
 import TestForm from "./testForm";
+import TestHeader from './testHeader';
 
 import Navigation from '../../components/navigation'
 
-function mapStateToProps(state) {
-  return {
+const mapStateToProps = state => ({
+  isloggedIn: state.auth.currentUser !== null,
+  isTestComplete: state.testData.currentQuestion === state.testData.numberOfQuestions,
+  testName: state.testData.testName
+})
 
-  };
+function Test(props) {
+  return (
+    <div className="test-page">
+      <Navigation />
+      
+      <main>
+
+        <TestHeader title={props.testName}/>
+
+        <section>
+          <TestForm />
+          {props.isTestComplete ? (
+            <Link to="/results">
+              <button className="test-button">See Results</button>
+            </Link>  
+          ) : (
+            <button className="test-button">Next</button>
+          )
+
+          }
+        </section>
+
+      </main>
+    </div>
+  );
 }
 
-class Test extends Component {
-  render() {
-    return (
-      <div className="test-page">
-       <Navigation />
-        
-        <main>
 
-          <header>
-            <h3>Treble Clef Test</h3>
-          </header>
-
-          <section>
-            <TestForm />
-          </section>
-        </main>
-      </div>
-    );
-  }
-}
-
-export default connect(
-  mapStateToProps,
-)(Test);
+export default connect(mapStateToProps)(Test);
