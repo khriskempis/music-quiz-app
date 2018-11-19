@@ -2,6 +2,7 @@ import React from 'react';
 import {BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 
 import Landing from '../pages/Landing/Landing';
+import Register from '../pages/Register/Register';
 import SignIn from '../pages/Sign-In/SignIn';
 import Test from '../pages/Test/Test';
 import Dashboard from "../pages/Dashboard/Dashboard";
@@ -16,6 +17,7 @@ function App(props){
         <main>
           <Switch>
             <Route exact path="/" component={Landing} />
+            <Route path="/register" component={Register} />
             <Route path="/signin" component={SignIn} />
             <Route path="/test" component={Test} />
             <Route path="/dashboard" component={Dashboard} />

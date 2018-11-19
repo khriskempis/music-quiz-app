@@ -21,9 +21,19 @@ export const setNumberOfQuestions = num => ({
 });
 
 export const SET_CURRENT_QUESTION = "SET_CURRENT_QUESTION";
-export const setCurrentQuestion = num => ({
+export const setCurrentQuestion = () => ({
   type: SET_CURRENT_QUESTION,
-  num
+})
+
+export const SET_CURRENT_CARD = "SET_CURRENT_CARD";
+export const setCurrentCard = () => ({
+  type: SET_CURRENT_CARD,
+})
+
+export const SET_TEST_NAME = "SET_TEST_NAME";
+export const setTestName = testName => ({
+  type: SET_TEST_NAME,
+  testName
 })
 
 export const ADD_WRONG_ANSWER = "ADD_WRONG_ANSWER";
@@ -37,4 +47,9 @@ export const addCorrectAnswer = cardId => ({
   type: ADD_CORRECT_ANSWER,
   cardId
 });
+
+export const RESTART_TEST = "RESTART_TEST";
+export const restartTest = () => ({
+  type: RESTART_TEST
+})
 

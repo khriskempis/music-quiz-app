@@ -7,27 +7,28 @@ import MultipleChoice from './multipleChoice';
 import Timer from './timer';
 import QuestionNumber from './question-number';
 import NoteImg from './noteImg'
+import NextButton from './nextButton';
+import { setCurrentCard } from '../../actions/test-data';
 
 const mapStateToProps = state => ({
   numberOfQuestions: state.testData.numberOfQuestions,
   currentQuestion: state.testData.currentQuestion,
   data: state.testData.data,
+  currentCard: state.testData.currentCard
 })
 
 export class testForm extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      imgUrl: '',
-      cardId: '',
-      note: "",
       answers: [],
     };
     this.logging = this.logging.bind(this);
   }
 
   componentDidMount(){
-    this.generateQuestion();
+    // this.generateQuestion();
+    this.generateAnswers();
   }
 
   generateRandomIndex(length){
@@ -35,21 +36,22 @@ export class testForm extends Component {
   }
 
   generateQuestion(){
-    const randomIndex = this.generateRandomIndex(this.props.data.length)
-    const noteCard = this.props.data[randomIndex]
-    this.setState({
-        imgUrl: noteCard.imgUrl,
-        cardId: noteCard.cardId,
-        note: noteCard.note 
-    },
-    this.generateAnswers
-    );
+    // const randomIndex = this.generateRandomIndex(this.props.data.length)
+    // const noteCard = this.props.data[randomIndex]
+    const noteCard = this.props.currentCard
+    // this.setState({
+    //     imgUrl: noteCard.imgUrl,
+    //     cardId: noteCard.cardId,
+    //     note: noteCard.note 
+    // },
+    // this.generateAnswers
+    // );
   }
 
   generateAnswers(){
     let availableAnswers = ["A", "B", "C", "D", "E", "F", "G"]
     let answers = [];
-    let correctAnswer = this.state.note;
+    let correctAnswer = this.props.currentCard.note;
     answers.push(correctAnswer);
     while(answers.length < 4){
       let answer = availableAnswers.splice(this.generateRandomIndex(availableAnswers.length), 1);
@@ -74,6 +76,11 @@ export class testForm extends Component {
     })
   };
 
+  updateCard(){
+    this.props.dispatch(setCurrentCard())
+    this.generateAnswers();
+  }
+
 
   logging() {
     console.log(this.state);
@@ -95,6 +102,7 @@ export class testForm extends Component {
           <MultipleChoice answers={this.state.answers}/>
 
         </form>
+        <NextButton onClick={e => this.updateCard()}/>
       </div>
     );
   }

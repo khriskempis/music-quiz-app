@@ -5,11 +5,10 @@ import { Link } from 'react-router-dom'
 import TestForm from "./testForm";
 import TestHeader from './testHeader';
 
+
 import Navigation from '../../components/navigation'
 
 const mapStateToProps = state => ({
-  isloggedIn: state.auth.currentUser !== null,
-  isTestComplete: state.testData.currentQuestion === state.testData.numberOfQuestions,
   testName: state.testData.testName
 })
 
@@ -24,15 +23,6 @@ function Test(props) {
 
         <section>
           <TestForm />
-          {props.isTestComplete ? (
-            <Link to="/results">
-              <button className="test-button">See Results</button>
-            </Link>  
-          ) : (
-            <button className="test-button">Next</button>
-          )
-
-          }
         </section>
 
       </main>

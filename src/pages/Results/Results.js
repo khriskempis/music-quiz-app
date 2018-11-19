@@ -1,13 +1,19 @@
 import React from 'react';
 
+import './results.css';
+
+import Navigation from '../../components/navigation';
+
 function Results(props) {
   return (
     <div>
-      <header>
-        <h2>Results</h2>
-      </header>
+      <Navigation />
 
       <div className="results-container">
+
+        <header>
+          <h2>Results</h2>
+        </header>
 
         <p>You Scored: </p>
 
