@@ -5,7 +5,9 @@ import {
   ADD_CORRECT_ANSWER,
   SET_CURRENT_CARD,
   SET_TEST_NAME,
-  RESTART_TEST
+  RESTART_TEST,
+  SET_HAS_STARTED,
+  SET_HAS_FINISHED
 } from '../actions/test-data';
 
 const initialState = {
@@ -14,31 +16,48 @@ const initialState = {
   currentCard: {
     imgUrl: "test",
     cardId: "a",
-    note: "a"
+    note: "A"
   },
   testName: "Treble Clef",
   wrongAnswers: [],
   correctAnswers: [],
+  hasStarted: false,
+  hasFinished: false,
   data: [
     {
-      imgUrl: "../imgs/BASS/JPGs/A2.jpg",
+      imgUrl: "/src/imgs/BASS/JPGs/A2.jpg",
       cardId: "A2",
       note: "A"
     },
     {
-      imgUrl: "../imgs/BASS/JPGs/A3.jpg",
+      imgUrl: "/src/imgs/BASS/JPGs/A3.jpg",
       cardId: "A3",
       note: "A"
     },
     {
-      imgUrl: "../imgs/BASS/JPGs/B2.jpg",
+      imgUrl: "/src/imgs/BASS/JPGs/B2.jpg",
       cardId: "B2",
       note: "B"
     },
     {
-      imgUrl: "../imgs/BASS/JPGs/B3.jpg",
+      imgUrl: "/src/imgs/BASS/JPGs/B3.jpg",
       cardId: "B3",
       note: "B"
+    },
+    {
+      note: "C"
+    },
+    {
+      note: "D"
+    },
+    {
+      note: "E"
+    },
+    {
+      note: "F"
+    },
+    {
+      note: "G"
     }
   ]
 }
@@ -51,12 +70,34 @@ export default function reducer(state = initialState, action) {
       }) 
     case SET_CURRENT_CARD:
       return Object.assign({}, state, {
-        currentCard: state.data[Math.floor(Math.random() * state.data.length)],
-        currentQuestion: state.currentQuestion+=1,
+        currentCard: state.data[Math.floor(Math.random() * state.data.length)]
+      })
+    case ADD_CORRECT_ANSWER:
+      return Object.assign({}, state, {
+        correctAnswers: [
+          ...state.correctAnswers,
+          action.card 
+        ]
+      })
+    case ADD_WRONG_ANSWER: 
+      return Object.assign({}, state, {
+        wrongAnswers: [
+          ...state.wrongAnswers,
+          action.card
+        ]
       })
     case SET_TEST_NAME:
       return Object.assign({}, state, {
         testName: action.testName
+      })
+
+    case SET_HAS_STARTED:
+      return Object.assign({}, state, {
+        hasStarted: true
+      })
+    case SET_HAS_FINISHED:
+      return Object.assign({}, state, {
+        hasFinished: true
       })
     case RESTART_TEST:
       return Object.assign({}, state, {

@@ -8,101 +8,95 @@ import Timer from './timer';
 import QuestionNumber from './question-number';
 import NoteImg from './noteImg'
 import NextButton from './nextButton';
-import { setCurrentCard } from '../../actions/test-data';
+import StatusMessage from './statusMessage';
+
+import { 
+  setCurrentCard, 
+  setCurrentQuestion, 
+  addWrongAnswer, 
+  addCorrectAnswer,
+  setHasStarted,
+  setHasFinished
+} from '../../actions/test-data';
 
 const mapStateToProps = state => ({
   numberOfQuestions: state.testData.numberOfQuestions,
   currentQuestion: state.testData.currentQuestion,
   data: state.testData.data,
-  currentCard: state.testData.currentCard
+  currentCard: state.testData.currentCard,
+  hasStarted: state.testData.hasStarted,
+  hasFinished: state.testData.hasFinished
 })
 
 export class testForm extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      answers: [],
+      answers: ["C", "D", "E", "F", "G", "A", "B"],
+      hasAnswered: false,
     };
-    this.logging = this.logging.bind(this);
   }
 
   componentDidMount(){
-    // this.generateQuestion();
-    this.generateAnswers();
+    this.props.dispatch(setCurrentCard());
+    this.props.dispatch(setHasStarted())
   }
-
-  generateRandomIndex(length){
-    return Math.floor(Math.random() * length)
-  }
-
-  generateQuestion(){
-    // const randomIndex = this.generateRandomIndex(this.props.data.length)
-    // const noteCard = this.props.data[randomIndex]
-    const noteCard = this.props.currentCard
-    // this.setState({
-    //     imgUrl: noteCard.imgUrl,
-    //     cardId: noteCard.cardId,
-    //     note: noteCard.note 
-    // },
-    // this.generateAnswers
-    // );
-  }
-
-  generateAnswers(){
-    let availableAnswers = ["A", "B", "C", "D", "E", "F", "G"]
-    let answers = [];
-    let correctAnswer = this.props.currentCard.note;
-    answers.push(correctAnswer);
-    while(answers.length < 4){
-      let answer = availableAnswers.splice(this.generateRandomIndex(availableAnswers.length), 1);
-      if (correctAnswer !== answer.join()) {
-        answers.push(answer);
-      }
-    }
-    this.setAnswers(this.shuffleAnswers(answers.flat()));
-  }
-
-  shuffleAnswers(array){
-    const shuffledAnswers = [];
-    for(let i=0; i < 4; i++){
-      shuffledAnswers.push(array.splice(this.generateRandomIndex(array.length), 1));
-    }
-    return shuffledAnswers.flat();
-  }
-
-  setAnswers(array){
-    this.setState({
-      answers: array
-    })
-  };
 
   updateCard(){
-    this.props.dispatch(setCurrentCard())
-    this.generateAnswers();
+    // sets a new Card while also incrementing question by 1
+    this.props.dispatch(setCurrentCard());
+    this.props.dispatch(setCurrentQuestion());
+    // updates UI state where user has not answered yet 
+    this.setState({
+      hasAnswered: false
+    })
   }
 
+  checkAnswer(answer){
+    // updates UI where user has made an answer
 
-  logging() {
-    console.log(this.state);
+    this.setState({
+      hasAnswered: true,
+    });
+
+    const correctAnswer = this.props.currentCard.note
+
+    if (answer !== correctAnswer){
+      this.props.dispatch(addWrongAnswer(correctAnswer))
+    } else {
+      this.props.dispatch(addCorrectAnswer(correctAnswer))
+    }
   }
 
-  
+  endTest(){
+    this.props.dispatch(setHasFinished())
+  }
 
   render() {   
 
     return (
       <div>
-        <button onClick={this.logging}>Log</button>
-        <form className="test-container">
-          <Timer />
+        <form className="test-container" onSubmit={e => e.preventDefault()}>
+          <Timer 
+            hasAnswered={this.state.hasAnswered}
+            hasStarted={this.props.hasStarted}
+            hasFinished={this.props.hasFinished}
+            endTest={e => this.endTest()}/>
+
           <QuestionNumber />
 
-          <NoteImg imgUrl='../../imgs/BASS/JPGs/A2.jpg'/>
+          <NoteImg imgUrl={window.location.origin + '/src/imgs/BASS/JPGs/A2.jpg'}/>
+          {this.state.hasAnswered &&
+          <StatusMessage note={this.props.currentCard.note}/>}
 
-          <MultipleChoice answers={this.state.answers}/>
+          <MultipleChoice 
+            disabled={this.state.hasAnswered} 
+            answers={this.state.answers} 
+            onClick={answer => this.checkAnswer(answer)}/>
 
         </form>
-        <NextButton onClick={e => this.updateCard()}/>
+        {this.state.hasAnswered && 
+        <NextButton onClick={e => this.updateCard()}/>}
       </div>
     );
   }

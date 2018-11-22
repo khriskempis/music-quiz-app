@@ -37,16 +37,26 @@ export const setTestName = testName => ({
 })
 
 export const ADD_WRONG_ANSWER = "ADD_WRONG_ANSWER";
-export const addWrongAnswer = cardId => ({
+export const addWrongAnswer = card => ({
   type: ADD_WRONG_ANSWER,
-  cardId
+  card
 });
 
 export const ADD_CORRECT_ANSWER = "ADD_CORRECT_ANSWER";
-export const addCorrectAnswer = cardId => ({
+export const addCorrectAnswer = card => ({
   type: ADD_CORRECT_ANSWER,
-  cardId
+  card
 });
+
+export const SET_HAS_STARTED = "SET_HAS_STARTED";
+export const setHasStarted = () => ({
+  type: SET_HAS_STARTED,
+})
+
+export const SET_HAS_FINISHED = "SET_HAS_FINISHED";
+export const setHasFinished = () => ({
+  type: SET_HAS_FINISHED
+})
 
 export const RESTART_TEST = "RESTART_TEST";
 export const restartTest = () => ({
