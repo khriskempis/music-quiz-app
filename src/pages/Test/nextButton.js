@@ -13,10 +13,10 @@ export function nextButton(props) {
       <div>
         {props.isTestComplete ? (
             <Link to={props.isloggedIn ? "/results" : "/register"}>
-              <button className="test-button">See Results</button>
+              <button className="test-button" onClick={e => props.endTest()}>See Results</button>
             </Link>  
           ) : (
-            <button className="test-button" onClick={e => props.onClick()}>Next</button>
+            <button className="test-button" onClick={e => props.updateCard()}>Next</button>
           )
         }  
       </div>

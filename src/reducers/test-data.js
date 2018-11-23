@@ -5,24 +5,27 @@ import {
   ADD_CORRECT_ANSWER,
   SET_CURRENT_CARD,
   SET_TEST_NAME,
+  BEGIN_TEST,
   RESTART_TEST,
   SET_HAS_STARTED,
-  SET_HAS_FINISHED
+  SET_HAS_FINISHED,
+  SET_TIME_REMAINING
 } from '../actions/test-data';
 
 const initialState = {
   numberOfQuestions: 10,
-  currentQuestion: 1,
+  currentQuestion: 9,
   currentCard: {
     imgUrl: "test",
     cardId: "a",
     note: "A"
   },
   testName: "Treble Clef",
-  wrongAnswers: [],
-  correctAnswers: [],
+  wrongAnswers: ['A', 'B', 'C', 'D'],
+  correctAnswers: ["A", "B", 'C', 'D', 'E', 'A'],
   hasStarted: false,
   hasFinished: false,
+  timeRemaining: null,
   data: [
     {
       imgUrl: "/src/imgs/BASS/JPGs/A2.jpg",
@@ -99,9 +102,25 @@ export default function reducer(state = initialState, action) {
       return Object.assign({}, state, {
         hasFinished: true
       })
+    case SET_TIME_REMAINING: 
+      return Object.assign({}, state, {
+        timeRemaining: action.time
+      })
+    case BEGIN_TEST: 
+      return Object.assign({}, state, {
+        testName: action.testName,
+        currentQuestion: 1,
+        hasFinished: false,
+        wrongAnswers: [],
+        correctAnswers: [],
+      })
     case RESTART_TEST:
       return Object.assign({}, state, {
-        currentQuestion: 1
+        currentQuestion: 1,
+        hasFinished: false,
+        wrongAnswers: [],
+        correctAnswers: [],
+        timeRemaining: null,
       })
     default: 
       return state

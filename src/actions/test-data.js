@@ -58,6 +58,18 @@ export const setHasFinished = () => ({
   type: SET_HAS_FINISHED
 })
 
+export const SET_TIME_REMAINING = "SET_TIME_REMAINING";
+export const setTimeRemaining = time => ({
+  type: SET_TIME_REMAINING,
+  time
+})
+
+export const BEGIN_TEST = "BEGIN_TEST";
+export const beginTest = testName => ({
+  type: BEGIN_TEST,
+  testName
+})
+
 export const RESTART_TEST = "RESTART_TEST";
 export const restartTest = () => ({
   type: RESTART_TEST

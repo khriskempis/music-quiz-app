@@ -1,5 +1,11 @@
 import React from 'react';
-import {Redirect} from 'react-router-dom'
+import {connect} from 'react-redux';
+
+import { setTimeRemaining } from '../../actions/test-data'
+
+const mapStateToProps = state => ({
+  hasFinished: state.testData.hasFinished
+})
 
 export class timer extends React.Component {
   constructor(props) {
@@ -7,7 +13,7 @@ export class timer extends React.Component {
     
     this.state = {
       seconds: '00',
-      value: 1,
+      value: 3,
     }
   }
 
@@ -15,6 +21,11 @@ export class timer extends React.Component {
     this.intervalHandle = setInterval(this.tick, 1000);
     let time = this.state.value;
     this.secondsRemaining = time * 60;
+  }
+
+  componentWillUnmount(){
+    clearInterval(this.intervalHandle);
+    this.props.dispatch(setTimeRemaining(`${this.state.value}:${this.state.seconds}`))
   }
 
   tick = () => {
@@ -41,6 +52,7 @@ export class timer extends React.Component {
   }
 
   render() {
+
     return (
       <div className="test-timer">
         <p>{this.state.value}:{this.state.seconds}</p>
@@ -50,4 +62,4 @@ export class timer extends React.Component {
   }
 }
 
-export default timer
+export default connect()(timer);

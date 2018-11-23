@@ -16,12 +16,11 @@ import {
   addWrongAnswer, 
   addCorrectAnswer,
   setHasStarted,
-  setHasFinished
+  setHasFinished,
+  restartTest
 } from '../../actions/test-data';
 
 const mapStateToProps = state => ({
-  numberOfQuestions: state.testData.numberOfQuestions,
-  currentQuestion: state.testData.currentQuestion,
   data: state.testData.data,
   currentCard: state.testData.currentCard,
   hasStarted: state.testData.hasStarted,
@@ -38,6 +37,7 @@ export class testForm extends Component {
   }
 
   componentDidMount(){
+    this.props.dispatch(restartTest());
     this.props.dispatch(setCurrentCard());
     this.props.dispatch(setHasStarted())
   }
@@ -96,7 +96,9 @@ export class testForm extends Component {
 
         </form>
         {this.state.hasAnswered && 
-        <NextButton onClick={e => this.updateCard()}/>}
+        <NextButton 
+        updateCard={e => this.updateCard()}
+        endTest={e => this.endTest()}/>}
       </div>
     );
   }

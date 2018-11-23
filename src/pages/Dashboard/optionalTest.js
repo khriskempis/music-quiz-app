@@ -2,10 +2,6 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 
-const mapStateToProps = state => ({
-
-})
-
 
 function optionalTest(props) {
   return (
@@ -17,4 +13,4 @@ function optionalTest(props) {
   );
 }
 
-export default connect(mapStateToProps)(optionalTest);
+export default connect()(optionalTest);
