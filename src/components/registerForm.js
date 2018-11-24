@@ -1,18 +1,13 @@
 import React, { Component } from 'react';
-import { connect } from 'react-redux';
 import { reduxForm, Field, focus} from 'redux-form';
 import {Link} from 'react-router-dom';
 
 import './registerForm.css';
 
-function mapStateToProps(state) {
-  return {
-
-  };
-}
-
 class registerForm extends Component {
   render() {
+
+
     return (
       <div className="register-form-container">
         <h3>Start Testing!</h3>
@@ -28,8 +23,6 @@ class registerForm extends Component {
 
           <label htmlFor="confirm-password">Confirm Password</label>
           <Field name="confirm-password" id="confirm-password" type="text" component="input" />
-
-          <Link to="/dashboard" ><button type="submit">Sign me up!</button></Link>
         </form>
       </div>
     );

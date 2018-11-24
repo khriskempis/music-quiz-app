@@ -1,37 +1,39 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { connect } from 'react-redux';
+import { Redirect } from 'react-router-dom'
 
 import TestForm from "./testForm";
+import TestHeader from './testHeader';
+
 
 import Navigation from '../../components/navigation'
 
-function mapStateToProps(state) {
-  return {
+const mapStateToProps = state => ({
+  testName: state.testData.testName,
+  hasFinished: state.testData.hasFinished
+})
 
-  };
-}
-
-class Test extends Component {
-  render() {
-    return (
-      <div className="test-page">
-       <Navigation />
-        
-        <main>
-
-          <header>
-            <h3>Treble Clef Test</h3>
-          </header>
-
-          <section>
-            <TestForm />
-          </section>
-        </main>
-      </div>
-    );
+function Test(props) {
+  if(props.hasFinished){
+    return <Redirect to="/results" />
   }
+
+  return (
+    <div className="test-page">
+      <Navigation />
+      
+      <main>
+
+        <TestHeader title={props.testName}/>
+
+        <section>
+          <TestForm />
+        </section>
+
+      </main>
+    </div>
+  );
 }
 
-export default connect(
-  mapStateToProps,
-)(Test);
+
+export default connect(mapStateToProps)(Test);

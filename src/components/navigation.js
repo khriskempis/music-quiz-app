@@ -1,15 +1,17 @@
-import React, { Component } from 'react';
+import React from 'react';
 import './navigation.css';
 
-class navigation extends Component {
-  render() {
-    return (
-        <nav>
-          navigation
-        </nav>
+import DashboardButton from './dashboardButton';
 
-    );
-  }
+function navigation(props) {
+  return (
+      <nav>
+        <DashboardButton />
+        navigation
+      </nav>
+
+  );
 }
+
 
 export default navigation;
