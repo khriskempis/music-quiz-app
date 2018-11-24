@@ -1,6 +1,6 @@
 import React from 'react';
 import {connect} from 'react-redux';
-import {Redirect} from 'react-router-dom';
+import {Redirect, Link} from 'react-router-dom';
 
 import './results.css';
 
@@ -18,9 +18,6 @@ const mapStateToProps = state => ({
 })
 
 function Results(props) {
-  if(!props.hasFinished){
-    return <Redirect to="/test" />
-  }
 
   return (
     <div>
@@ -45,10 +42,9 @@ function Results(props) {
           <span className="quickest-response">{props.wrongAnswers.join(', ')}</span>
         </div>
       </div>
-      <button onClick={e => {
-        props.dispatch(restartTest())
-      }
-    }>Take it Again</button>
+      <Link to="/test">
+        <button onClick={e => props.dispatch(restartTest())}>Take it Again</button>
+      </Link>
     </div>
   );
 }

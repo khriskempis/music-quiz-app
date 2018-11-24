@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 
 const mapStateToProps = state => ({
-  isloggedIn: state.auth.currentUser !== null,
+  isLoggedIn: state.auth.currentUser !== null,
   isTestComplete: state.testData.currentQuestion === state.testData.numberOfQuestions
 })
 
@@ -12,9 +12,15 @@ export function nextButton(props) {
     return (
       <div>
         {props.isTestComplete ? (
-            <Link to={props.isloggedIn ? "/results" : "/register"}>
-              <button className="test-button" onClick={e => props.endTest()}>See Results</button>
-            </Link>  
+            props.isLoggedIn ? (
+              <Link to="/results" >
+                <button className="test-button" onClick={e => props.endTest()}>See Results</button>
+              </Link>  
+            ) : (
+              <Link to="/register" >
+                <button className="test-button">See Results</button>
+              </Link>
+            )
           ) : (
             <button className="test-button" onClick={e => props.updateCard()}>Next</button>
           )
@@ -23,7 +29,25 @@ export function nextButton(props) {
     );
 }
 
+// {if(props.isLoggedIn){
+//   <Link to="/results" >
+//     <button className="test-button" onClick={e => props.endTest()}>See Results</button>
+//   </Link>  
+// } else {
+//   <Link to="/register" >
+//     <button className="test-button">See Results</button>
+//   </Link>  
+// }}
 
-export default connect(
-  mapStateToProps,
-)(nextButton);
+// {props.isLoggedIn ? (
+//   <Link to="/results" >
+//     <button className="test-button" onClick={e => props.endTest()}>See Results</button>
+//   </Link>  
+// ) : (
+//   <Link to="/register" >
+//     <button className="test-button">See Results</button>
+//   </Link>
+// )}
+
+
+export default connect(mapStateToProps)(nextButton);

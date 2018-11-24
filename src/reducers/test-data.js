@@ -24,7 +24,7 @@ const initialState = {
   wrongAnswers: ['A', 'B', 'C', 'D'],
   correctAnswers: ["A", "B", 'C', 'D', 'E', 'A'],
   hasStarted: false,
-  hasFinished: false,
+  hasFinished: true,
   timeRemaining: null,
   data: [
     {
