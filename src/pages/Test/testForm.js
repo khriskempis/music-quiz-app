@@ -85,7 +85,7 @@ export class testForm extends Component {
 
           <QuestionNumber />
 
-          <NoteImg imgUrl={window.location.origin + '/src/imgs/BASS/JPGs/A2.jpg'}/>
+          <NoteImg imgUrl={this.props.currentCard.imgUrl} />
           {this.state.hasAnswered &&
           <StatusMessage note={this.props.currentCard.note}/>}
 

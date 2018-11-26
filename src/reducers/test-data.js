@@ -24,43 +24,20 @@ const initialState = {
   wrongAnswers: ['A', 'B', 'C', 'D'],
   correctAnswers: ["A", "B", 'C', 'D', 'E', 'A'],
   hasStarted: false,
-  hasFinished: true,
+  hasFinished: false,
   timeRemaining: null,
   data: [
     {
-      imgUrl: "/src/imgs/BASS/JPGs/A2.jpg",
-      cardId: "A2",
-      note: "A"
+      imgUrl: "https://res.cloudinary.com/khrisraymond/image/upload/v1543184876/bass/treble%20jpgs/F4.jpg",
+      cardId: "F4",
+      note: "F",
+      clef: "treble"
     },
     {
-      imgUrl: "/src/imgs/BASS/JPGs/A3.jpg",
-      cardId: "A3",
-      note: "A"
-    },
-    {
-      imgUrl: "/src/imgs/BASS/JPGs/B2.jpg",
-      cardId: "B2",
-      note: "B"
-    },
-    {
-      imgUrl: "/src/imgs/BASS/JPGs/B3.jpg",
+      imgUrl: "https://res.cloudinary.com/khrisraymond/image/upload/v1543184069/bass/bass%20jpgs/B3.jpg",
       cardId: "B3",
-      note: "B"
-    },
-    {
-      note: "C"
-    },
-    {
-      note: "D"
-    },
-    {
-      note: "E"
-    },
-    {
-      note: "F"
-    },
-    {
-      note: "G"
+      note: "B",
+      clef: "bass"
     }
   ]
 }
