@@ -8,7 +8,6 @@ import Navigation from '../../components/navigation';
 
 import {restartTest} from '../../actions/test-data';
 import MyDashboardButton from '../../components/myDashboardButton';
-import { stat } from 'fs';
 
 const mapStateToProps = state => ({
   score: (state.testData.numberOfQuestions - state.testData.wrongAnswers.length) / state.testData.numberOfQuestions,
@@ -24,7 +23,6 @@ function calculateScore(score){
   if(score === 0){
     return "0%"
   }
-
   return score * 100
 }
 

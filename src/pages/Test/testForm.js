@@ -15,9 +15,7 @@ import {
   setCurrentQuestion, 
   addWrongAnswer, 
   addCorrectAnswer,
-  setHasStarted,
   setHasFinished,
-  restartTest
 } from '../../actions/test-data';
 
 const mapStateToProps = state => ({
@@ -38,7 +36,6 @@ export class testForm extends Component {
 
   componentDidMount(){
     this.props.dispatch(setCurrentCard());
-    this.props.dispatch(setHasStarted())
   }
 
   updateCard(){
