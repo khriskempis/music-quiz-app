@@ -9,7 +9,8 @@ import Navigation from '../../components/navigation';
 import Selection from './selection';
 
 const mapStateToProps = state => ({
-  isLoggedIn: state.auth.currentUser !== null
+  isLoggedIn: state.auth.currentUser !== null,
+  user: state.auth.currentUser
 })
 
 class Dashboard extends Component {
@@ -24,7 +25,7 @@ class Dashboard extends Component {
 
         <Navigation />
 
-        <Sidebar />
+        <Sidebar user={this.props.user.name}/>
         <section className="dashboard">
           <Selection />
         </section>

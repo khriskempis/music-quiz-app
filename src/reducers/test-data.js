@@ -14,32 +14,15 @@ import {
 
 const initialState = {
   numberOfQuestions: 10,
-  currentQuestion: 9,
-  currentCard: {
-    imgUrl: "test",
-    cardId: "a",
-    note: "A"
-  },
+  currentQuestion: 1,
+  currentCard: {},
   testName: "Treble Clef",
-  wrongAnswers: ['A', 'B', 'C', 'D'],
-  correctAnswers: ["A", "B", 'C', 'D', 'E', 'A'],
+  wrongAnswers: [],
+  correctAnswers: [],
   hasStarted: false,
-  hasFinished: false,
+  hasFinished: true,
   timeRemaining: null,
-  data: [
-    {
-      imgUrl: "https://res.cloudinary.com/khrisraymond/image/upload/v1543184876/bass/treble%20jpgs/F4.jpg",
-      cardId: "F4",
-      note: "F",
-      clef: "treble"
-    },
-    {
-      imgUrl: "https://res.cloudinary.com/khrisraymond/image/upload/v1543184069/bass/bass%20jpgs/B3.jpg",
-      cardId: "B3",
-      note: "B",
-      clef: "bass"
-    }
-  ]
+  data: []
 }
 
 export default function reducer(state = initialState, action) {

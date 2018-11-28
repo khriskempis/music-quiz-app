@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import {reduxForm, Field, focus} from 'redux-form';
+import { Redirect, Link } from 'react-router-dom';
+
 import {registerUser} from '../actions/users';
 import {login} from '../actions/auth'
 import Input from './input';
@@ -10,14 +12,18 @@ const matchesPassword = matches('password');
 
 class registerForm extends Component {
   onSubmit(values){
-    const {username, password} = values;
-    const user = {username, password}
+    const {name, email, password} = values;
+    const user = {name, email, password}
     return this.props
       .dispatch(registerUser(user))
-      .then(() => this.props.dispatch(login(username, password)));
+      .then(() => this.props.dispatch(login(name, email, password)));
   }
 
   render() {
+    if(this.props.isLoggedIn){
+      return <Redirect to="/dashboard"/>
+    }
+
     return (
       <div className="register-form-container">
         <h3>Start Testing!</h3>
@@ -40,7 +46,7 @@ class registerForm extends Component {
           <Field 
             name="password" 
             id="password" 
-            type="text" 
+            type="password" 
             component={Input}
             validate={[required, passwordLength, isTrimmed]}  
           />
@@ -49,10 +55,19 @@ class registerForm extends Component {
           <Field 
             name="confirm-password" 
             id="confirm-password" 
-            type="text" 
+            type="password" 
             component={Input}
             validate={[required, nonEmpty, matchesPassword]}
           />
+
+          <button type="submit">Sign Me Up!</button>
+
+          {/* {this.props.hasFinished ? (
+          <Link to="/dashboard" ><button type="submit">Sign me up!</button></Link>
+        ) : (
+          <Link to="/results" ><button type="submit">Sign me up!</button></Link>
+        )
+      } */}
         </form>
       </div>
     );
