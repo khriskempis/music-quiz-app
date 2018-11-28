@@ -16,7 +16,7 @@ class registerForm extends Component {
     const user = {name, email, password}
     return this.props
       .dispatch(registerUser(user))
-      .then(() => this.props.dispatch(login(name, email, password)));
+      .then(() => this.props.dispatch(login(email, password)));
   }
 
   render() {
