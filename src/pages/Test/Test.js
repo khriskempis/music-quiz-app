@@ -32,11 +32,11 @@ function Test(props) {
       <Navigation />
       
       <main>
-
-        <TestHeader title={props.testName}/>
-        {props.isLoggedIn && 
+      {props.isLoggedIn && 
           <MyDashboardButton />
         }
+
+        <TestHeader title={props.testName}/>
 
         <section>
           <TestForm />

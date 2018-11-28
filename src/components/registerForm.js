@@ -20,6 +20,10 @@ class registerForm extends Component {
   }
 
   render() {
+    if(this.props.isLoggedIn && !this.props.hasFinished){
+      return <Redirect to="/results" />
+    }
+
     if(this.props.isLoggedIn){
       return <Redirect to="/dashboard"/>
     }
