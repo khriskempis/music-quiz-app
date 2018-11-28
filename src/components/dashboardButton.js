@@ -15,10 +15,12 @@ export function button(props){
   return (
     <div>
       {props.isLoggedIn ? (
+        <Link to="/signin" >
           <button 
             className="dashboard-button" 
             onClick={e => {props.dispatch(clearAuth())}}
             >Sign Out</button>
+        </Link>
       ) : (
         <Link to="/signin" >
           <button 

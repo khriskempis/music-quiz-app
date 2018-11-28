@@ -37,7 +37,6 @@ export class testForm extends Component {
   }
 
   componentDidMount(){
-    this.props.dispatch(restartTest());
     this.props.dispatch(setCurrentCard());
     this.props.dispatch(setHasStarted())
   }

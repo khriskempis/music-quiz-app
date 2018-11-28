@@ -1,3 +1,5 @@
+import { API_BASE_URL } from "../config";
+
 export const FETCH_DATA_SUCCESS = "FETCH_DATA_SUCCESS";
 export const fetchDataSucces = data => ({
   type: FETCH_DATA_SUCCESS,
@@ -9,10 +11,6 @@ export const fetchDataError = error => ({
   type: FETCH_DATA_ERROR,
   error
 })
-
-// export const fetchData = () => dispatch => {
-
-// }
 
 export const SET_NUMBER_OF_QUESTONS = "SET_NUMBER_OF_QUESTIONS";
 export const setNumberOfQuestions = num => ({
@@ -64,6 +62,23 @@ export const setTimeRemaining = time => ({
   time
 })
 
+export const TEST_REQUEST = "TEST_REQUEST";
+export const testRequest = () => ({
+  type: TEST_REQUEST
+})
+
+export const TEST_SUCCESS = "TEST_SUCCESS";
+export const testSuccess = test => ({
+  type: TEST_SUCCESS,
+  test
+})
+
+export const TEST_ERROR = "TEST_ERROR";
+export const testError = error => ({
+  type: TEST_ERROR,
+  error
+})
+
 export const BEGIN_TEST = "BEGIN_TEST";
 export const beginTest = testName => ({
   type: BEGIN_TEST,
@@ -74,4 +89,30 @@ export const RESTART_TEST = "RESTART_TEST";
 export const restartTest = () => ({
   type: RESTART_TEST
 })
+
+export const fetchTestType = test => dispatch => {
+  dispatch(testRequest());
+  return (
+    fetch(`${API_BASE_URL}/data/type/${test}`, {
+      method: "GET",
+      headers: {
+        'Content-Type': 'application/json'
+      }
+    })
+    .then(res => {
+      if(!res.ok){
+        return Promise.reject({
+          message: "a Problem occured"
+        })
+      }
+      return res.json()
+    })
+    .then(testData => {
+      dispatch(testSuccess(testData))
+    })
+    .catch(err => {
+      dispatch(testError(err));
+    })
+  )
+}
 

@@ -9,20 +9,44 @@ import {
   RESTART_TEST,
   SET_HAS_STARTED,
   SET_HAS_FINISHED,
-  SET_TIME_REMAINING
+  SET_TIME_REMAINING,
+  TEST_REQUEST,
+  TEST_SUCCESS,
+  TEST_ERROR
 } from '../actions/test-data';
 
 const initialState = {
+  loading: false,
+  error: null,
+
   numberOfQuestions: 10,
   currentQuestion: 1,
-  currentCard: {},
+  currentCard: {
+    imgUrl: "test",
+    noteId: "A3",
+    note: "A",
+    clef: "treble"
+  },
   testName: "Treble Clef",
   wrongAnswers: [],
   correctAnswers: [],
   hasStarted: false,
-  hasFinished: true,
+  hasFinished: false,
   timeRemaining: null,
-  data: []
+  data: [
+    {
+      imgUrl: "test",
+      noteId: "A3",
+      note: "A",
+      clef: "treble"
+    },
+    {
+      imgUrl: "test",
+      noteId: "B3",
+      note: "B",
+      clef: "treble"
+    }
+  ]
 }
 
 export default function reducer(state = initialState, action) {
@@ -65,6 +89,20 @@ export default function reducer(state = initialState, action) {
     case SET_TIME_REMAINING: 
       return Object.assign({}, state, {
         timeRemaining: action.time
+      })
+    case TEST_REQUEST: 
+      return Object.assign({}, state, {
+        loading: true
+      })
+    case TEST_SUCCESS: 
+      return Object.assign({}, state, {
+        loading: false,
+        data: action.test
+      })
+    case TEST_ERROR: 
+      return Object.assign({}, state, {
+        loading: false,
+        error: action.error
       })
     case BEGIN_TEST: 
       return Object.assign({}, state, {
