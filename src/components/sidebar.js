@@ -10,7 +10,7 @@ function sidebar(props) {
         <div className="sidebar-links">
 
           <div className="user-image">
-            <p>{props.user}</p>
+            <p>Welcome {props.user}!</p>
           </div>
 
           <ul>

@@ -1,4 +1,8 @@
 import React, { Component } from 'react';
+import {connect} from 'react-redux'
+import {Redirect} from 'react-router-dom'
+
+
 import Hero from './hero';
 import Navigation from '../../components/navigation';
 import Details from './details';
@@ -6,12 +10,19 @@ import Features from './features';
 import Footer from '../../components/footer';
 import RegisterForm from '../../components/registerForm';
 
-
-
 import './landing.css';
+
+const mapStateToProps = state => ({
+  isLoggedIn: state.auth.currentUser !== null
+})
 
 class Landing extends Component {
   render() {
+
+    if(this.props.isLoggedIn){
+      return <Redirect to="/dashboard" />
+    }
+
     return (
 
       <div className="landing-page">        
@@ -40,4 +51,4 @@ class Landing extends Component {
   }
 }
 
-export default Landing;
+export default connect(mapStateToProps)(Landing);
