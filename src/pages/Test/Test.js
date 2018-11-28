@@ -8,6 +8,7 @@ import Loading from '../../components/loading';
 
 
 import Navigation from '../../components/navigation'
+import myDashboardButton from '../../components/myDashboardButton';
 
 const mapStateToProps = state => ({
   testName: state.testData.testName,
@@ -29,6 +30,8 @@ function Test(props) {
       <Navigation />
       
       <main>
+        
+        <myDashboardButton />
 
         <TestHeader title={props.testName}/>
 

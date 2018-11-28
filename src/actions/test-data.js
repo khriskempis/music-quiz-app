@@ -116,3 +116,29 @@ export const fetchTestType = test => dispatch => {
   )
 }
 
+export const fetchTestMiddle = test => dispatch => {
+  dispatch(testRequest());
+  return (
+    fetch(`${API_SERVER_URL}/data/test/middle`, {
+      method: "GET",
+      headers: {
+        'Content-Type': 'application/json'
+      }
+    })
+    .then(res => {
+      if(!res.ok){
+        return Promise.reject({
+          message: "a Problem Occured"
+        })
+      }
+      return res.json()
+    })
+    .then(testData => {
+      dispatch(testSuccess(testData))
+    })
+    .catch(err => {
+      dispatch(testError(err));
+    })
+  )
+}
+

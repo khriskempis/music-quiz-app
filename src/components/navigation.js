@@ -1,12 +1,12 @@
 import React from 'react';
 import './navigation.css';
 
-import DashboardButton from './dashboardButton';
+import LogInButton from './loginButton';
 
 function navigation(props) {
   return (
       <nav>
-        <DashboardButton />
+        <LogInButton />
         navigation
       </nav>
 
