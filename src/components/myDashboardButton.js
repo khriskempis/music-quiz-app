@@ -5,7 +5,7 @@ function myDashboardButton(props) {
   return (
     <div className="my-dashboard-button">
       <Link to="/dashboard" >
-        My Dashboard
+        <button>My Dashboard</button>
       </Link>
     </div>
   );

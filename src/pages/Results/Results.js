@@ -7,6 +7,7 @@ import './results.css';
 import Navigation from '../../components/navigation';
 
 import {restartTest} from '../../actions/test-data';
+import MyDashboardButton from '../../components/myDashboardButton';
 
 const mapStateToProps = state => ({
   score: (state.testData.numberOfQuestions - state.testData.wrongAnswers.length) / state.testData.numberOfQuestions,
@@ -24,6 +25,8 @@ function Results(props) {
       <Navigation />
 
       <div className="results-container">
+
+        <MyDashboardButton />
 
         <header>
           <h2>Results</h2>
