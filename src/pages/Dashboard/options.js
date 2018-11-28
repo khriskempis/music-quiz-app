@@ -10,15 +10,15 @@ function options(props) {
     <div className="options-buttons">
       <p>Choose a one:</p>
       <OptionalTestButton 
-        onClick={testName => props.dispatch(fetchTestMiddle())} 
+        onClick={e => props.dispatch(fetchTestMiddle())} 
         testName={"Middle C Position"}/>
 
       <OptionalTestButton 
-        onClick={testName => props.dispatch(fetchTestType("treble"))} 
+        onClick={e => props.dispatch(fetchTestType("treble"))} 
         testName={"Treble Clef"}/>
 
       <OptionalTestButton 
-        onClick={testName => props.dispatch(fetchTestType("bass"))} 
+        onClick={e => props.dispatch(fetchTestType("bass"))} 
         testName={"Bass Clef"}/>
 
     </div>

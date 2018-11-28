@@ -8,12 +8,14 @@ import Loading from '../../components/loading';
 
 
 import Navigation from '../../components/navigation'
-import myDashboardButton from '../../components/myDashboardButton';
+import MyDashboardButton from '../../components/myDashboardButton';
+import { stat } from 'fs';
 
 const mapStateToProps = state => ({
   testName: state.testData.testName,
   hasFinished: state.testData.hasFinished,
-  isLoading: state.testData.loading
+  isLoading: state.testData.loading,
+  isLoggedIn: state.auth.currentUser !== null
 })
 
 function Test(props) {
@@ -30,10 +32,11 @@ function Test(props) {
       <Navigation />
       
       <main>
-        
-        <myDashboardButton />
 
         <TestHeader title={props.testName}/>
+        {props.isLoggedIn && 
+          <MyDashboardButton />
+        }
 
         <section>
           <TestForm />

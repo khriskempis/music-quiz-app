@@ -3,11 +3,6 @@ import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 
 
-function handleClick(props){
-  props.onClick(props.testName);
-  props.dispatch(fetch)
-}
-
 function optionalTest(props) {
   return (
     <div>

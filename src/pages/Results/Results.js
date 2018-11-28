@@ -8,6 +8,7 @@ import Navigation from '../../components/navigation';
 
 import {restartTest} from '../../actions/test-data';
 import MyDashboardButton from '../../components/myDashboardButton';
+import { stat } from 'fs';
 
 const mapStateToProps = state => ({
   score: (state.testData.numberOfQuestions - state.testData.wrongAnswers.length) / state.testData.numberOfQuestions,
@@ -15,18 +16,26 @@ const mapStateToProps = state => ({
   correctAnswers: state.testData.correctAnswers,
   wrongAnswers: state.testData.wrongAnswers,
   timeRemaining: state.testData.timeRemaining,
-  hasFinished: state.testData.hasFinished
+  hasFinished: state.testData.hasFinished,
+  isLoggedIn: state.auth.currentUser !== null
 })
 
-function Results(props) {
+function calculateScore(score){
+  if(score === 0){
+    return "0%"
+  }
 
+  return score * 100
+}
+
+function Results(props) {
   return (
     <div>
       <Navigation />
 
       <div className="results-container">
 
-        <MyDashboardButton />
+        {props.isLoggedIn<MyDashboardButton />}
 
         <header>
           <h2>Results</h2>
@@ -34,7 +43,7 @@ function Results(props) {
 
         <p>You Scored: </p>
 
-        <p><span className="score-display">{props.score * 100}%</span></p>
+        <p><span className="score-display">{calculateScore(props.score)}%</span></p>
 
         <div className="score-details">
           <p>Correct Notes:</p>
