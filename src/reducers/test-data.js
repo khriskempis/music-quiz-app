@@ -9,58 +9,42 @@ import {
   RESTART_TEST,
   SET_HAS_STARTED,
   SET_HAS_FINISHED,
-  SET_TIME_REMAINING
+  SET_TIME_REMAINING,
+  TEST_REQUEST,
+  TEST_SUCCESS,
+  TEST_ERROR
 } from '../actions/test-data';
 
 const initialState = {
+  loading: false,
+  error: null,
+
   numberOfQuestions: 10,
-  currentQuestion: 9,
+  currentQuestion: 1,
   currentCard: {
     imgUrl: "test",
-    cardId: "a",
-    note: "A"
+    noteId: "A3",
+    note: "A",
+    clef: "treble"
   },
   testName: "Treble Clef",
-  wrongAnswers: ['A', 'B', 'C', 'D'],
-  correctAnswers: ["A", "B", 'C', 'D', 'E', 'A'],
+  wrongAnswers: [],
+  correctAnswers: [],
   hasStarted: false,
-  hasFinished: true,
+  hasFinished: false,
   timeRemaining: null,
   data: [
     {
-      imgUrl: "/src/imgs/BASS/JPGs/A2.jpg",
-      cardId: "A2",
-      note: "A"
+      imgUrl: "test",
+      noteId: "A3",
+      note: "A",
+      clef: "treble"
     },
     {
-      imgUrl: "/src/imgs/BASS/JPGs/A3.jpg",
-      cardId: "A3",
-      note: "A"
-    },
-    {
-      imgUrl: "/src/imgs/BASS/JPGs/B2.jpg",
-      cardId: "B2",
-      note: "B"
-    },
-    {
-      imgUrl: "/src/imgs/BASS/JPGs/B3.jpg",
-      cardId: "B3",
-      note: "B"
-    },
-    {
-      note: "C"
-    },
-    {
-      note: "D"
-    },
-    {
-      note: "E"
-    },
-    {
-      note: "F"
-    },
-    {
-      note: "G"
+      imgUrl: "test",
+      noteId: "B3",
+      note: "B",
+      clef: "treble"
     }
   ]
 }
@@ -105,6 +89,20 @@ export default function reducer(state = initialState, action) {
     case SET_TIME_REMAINING: 
       return Object.assign({}, state, {
         timeRemaining: action.time
+      })
+    case TEST_REQUEST: 
+      return Object.assign({}, state, {
+        loading: true
+      })
+    case TEST_SUCCESS: 
+      return Object.assign({}, state, {
+        loading: false,
+        data: action.test
+      })
+    case TEST_ERROR: 
+      return Object.assign({}, state, {
+        loading: false,
+        error: action.error
       })
     case BEGIN_TEST: 
       return Object.assign({}, state, {

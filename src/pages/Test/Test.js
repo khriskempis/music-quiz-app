@@ -4,16 +4,22 @@ import { Redirect } from 'react-router-dom'
 
 import TestForm from "./testForm";
 import TestHeader from './testHeader';
+import Loading from '../../components/loading';
 
 
 import Navigation from '../../components/navigation'
 
 const mapStateToProps = state => ({
   testName: state.testData.testName,
-  hasFinished: state.testData.hasFinished
+  hasFinished: state.testData.hasFinished,
+  isLoading: state.testData.loading
 })
 
 function Test(props) {
+  if(props.isLoading){
+    return <Loading />
+  }
+
   if(props.hasFinished){
     return <Redirect to="/results" />
   }

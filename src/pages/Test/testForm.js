@@ -37,7 +37,6 @@ export class testForm extends Component {
   }
 
   componentDidMount(){
-    this.props.dispatch(restartTest());
     this.props.dispatch(setCurrentCard());
     this.props.dispatch(setHasStarted())
   }
@@ -85,7 +84,7 @@ export class testForm extends Component {
 
           <QuestionNumber />
 
-          <NoteImg imgUrl={window.location.origin + '/src/imgs/BASS/JPGs/A2.jpg'}/>
+          <NoteImg imgUrl={this.props.currentCard.imgUrl} />
           {this.state.hasAnswered &&
           <StatusMessage note={this.props.currentCard.note}/>}
 

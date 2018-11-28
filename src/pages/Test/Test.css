@@ -11,15 +11,11 @@
   background-color: white;
 }
 
-.test-question {
-  margin: 2rem auto
-}
-
 .test-question img {
   display: block;
   margin: 0 auto;
-  width: 5rem;
-  height: 5rem;
+  width: 15rem;
+  height: 15rem;
 }
 
 .test-timer {
