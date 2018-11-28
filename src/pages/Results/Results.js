@@ -35,7 +35,7 @@ function Results(props) {
 
       <div className="results-container">
 
-        {props.isLoggedIn<MyDashboardButton />}
+        {props.isLoggedIn && <MyDashboardButton />}
 
         <header>
           <h2>Results</h2>
