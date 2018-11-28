@@ -4,7 +4,7 @@ import {Link} from 'react-router-dom';
 
 import {clearAuth} from '../actions/auth';
 
-import './dashboardButton.css';
+import './loginButton.css';
 
 const mapStateToProps = state => ({
   isLoggedIn: state.auth.currentUser !== null
