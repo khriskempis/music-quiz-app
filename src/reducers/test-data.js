@@ -80,7 +80,7 @@ export default function reducer(state = initialState, action) {
 
     case SET_HAS_STARTED:
       return Object.assign({}, state, {
-        hasStarted: true
+        hasStarted: !state.hasStarted
       })
     case SET_HAS_FINISHED:
       return Object.assign({}, state, {

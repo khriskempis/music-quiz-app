@@ -7,7 +7,7 @@ import './dashboard.css';
 import Sidebar from '../../components/sidebar';
 import Navigation from '../../components/navigation';
 import Selection from './selection';
-import { setHasFinished } from '../../actions/test-data';
+import { setHasFinished, setHasStarted } from '../../actions/test-data';
 
 const mapStateToProps = state => ({
   isLoggedIn: state.auth.currentUser !== null,
@@ -16,6 +16,7 @@ const mapStateToProps = state => ({
 
 class Dashboard extends Component {
   componentDidMount(){
+    this.props.dispatch(setHasStarted())
     this.props.dispatch(setHasFinished());
   }
 
