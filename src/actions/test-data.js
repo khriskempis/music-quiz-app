@@ -116,7 +116,7 @@ export const fetchTestType = test => dispatch => {
   )
 }
 
-export const fetchTestMiddle = test => dispatch => {
+export const fetchTestMiddle = () => dispatch => {
   dispatch(testRequest());
   return (
     fetch(`${API_SERVER_URL}/data/test/middle`, {

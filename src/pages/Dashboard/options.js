@@ -1,7 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 
-import {fetchTestType} from '../../actions/test-data'
+import {fetchTestType, fetchTestMiddle} from '../../actions/test-data'
 
 import OptionalTestButton from './optionalTest';
 
@@ -10,7 +10,7 @@ function options(props) {
     <div className="options-buttons">
       <p>Choose a one:</p>
       <OptionalTestButton 
-        onClick={testName => props.dispatch()} 
+        onClick={testName => props.dispatch(fetchTestMiddle())} 
         testName={"Middle C Position"}/>
 
       <OptionalTestButton 
