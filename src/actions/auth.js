@@ -1,7 +1,7 @@
 import jwtDecode from 'jwt-decode';
 import {SubmissionError} from 'redux-form';
 
-import {API_BASE_URL} from '../config';
+import {API_BASE_URL, API_SERVER_URL} from '../config';
 import {normalizeResponseErrors} from './utils';
 import {saveAuthToken, clearAuthToken} from '../local-storage';
 
@@ -46,7 +46,7 @@ const storeAuthInfo = (authToken, dispatch) => {
 export const login = (email, password) => dispatch => {
     dispatch(authRequest());
     return (
-        fetch(`${API_BASE_URL}/auth/login`, {
+        fetch(`${API_SERVER_URL}/auth/login`, {
            method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
