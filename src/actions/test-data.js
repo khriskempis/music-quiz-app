@@ -1,4 +1,4 @@
-import { API_BASE_URL } from "../config";
+import { API_BASE_URL, API_SERVER_URL } from "../config";
 
 export const FETCH_DATA_SUCCESS = "FETCH_DATA_SUCCESS";
 export const fetchDataSucces = data => ({
@@ -93,7 +93,7 @@ export const restartTest = () => ({
 export const fetchTestType = test => dispatch => {
   dispatch(testRequest());
   return (
-    fetch(`${API_BASE_URL}/data/type/${test}`, {
+    fetch(`${API_SERVER_URL}/data/type/${test}`, {
       method: "GET",
       headers: {
         'Content-Type': 'application/json'
