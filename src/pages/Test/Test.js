@@ -24,7 +24,7 @@ function Test(props) {
     return <Loading />
   }
 
-  if(props.hasFinished && currentQuestion === 10){
+  if(props.hasFinished && props.currentQuestion === 10){
     return <Redirect to="/results" />
   }
 
