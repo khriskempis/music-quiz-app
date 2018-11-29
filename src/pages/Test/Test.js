@@ -24,9 +24,9 @@ function Test(props) {
     return <Loading />
   }
 
-  if(props.currentQuestion === 10 && props.hasFinished){
-    return <Redirect to="/results" />
-  }
+  // if(props.currentQuestion === 10 && props.hasFinished){
+  //   return <Redirect to="/results" />
+  // }
 
   return (
     <div className="test-page">
