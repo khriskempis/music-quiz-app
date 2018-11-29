@@ -15,7 +15,8 @@ const mapStateToProps = state => ({
   testName: state.testData.testName,
   hasFinished: state.testData.hasFinished,
   isLoading: state.testData.loading,
-  isLoggedIn: state.auth.currentUser !== null
+  currentQuestion: state.testData.currentQuestion,
+  isLoggedIn: state.auth.currentUser !== null,
 })
 
 function Test(props) {
@@ -23,7 +24,7 @@ function Test(props) {
     return <Loading />
   }
 
-  if(props.hasFinished){
+  if(props.hasFinished && currentQuestion === 10){
     return <Redirect to="/results" />
   }
 
@@ -40,7 +41,7 @@ function Test(props) {
 
         <section>
           <TestForm />
-        </section>
+          </section>
 
       </main>
     </div>
