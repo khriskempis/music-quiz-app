@@ -18,7 +18,7 @@ function options(props) {
         testName={"Treble Clef"}/>
 
       <OptionalTestButton 
-        onClick={e => props.dispatch(fetchTestType({type: "bass", testName: "Bass Clef")})} 
+        onClick={e => props.dispatch(fetchTestType({type: "bass", testName: "Bass Clef"}))} 
         testName={"Bass Clef"}/>
 
     </div>
