@@ -93,7 +93,7 @@ export const restartTest = () => ({
 export const fetchTestType = test => dispatch => {
   dispatch(testRequest());
   return (
-    fetch(`${API_SERVER_URL}/data/type/${test}`, {
+    fetch(`${API_SERVER_URL}/data/type/${test.type}`, {
       method: "GET",
       headers: {
         'Content-Type': 'application/json'
@@ -109,7 +109,7 @@ export const fetchTestType = test => dispatch => {
     })
     .then(testData => {
       dispatch(testSuccess(testData))
-      dispatch(beginTest(test))
+      dispatch(beginTest(test.testName))
     })
     .catch(err => {
       dispatch(testError(err));

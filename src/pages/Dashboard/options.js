@@ -14,11 +14,11 @@ function options(props) {
         testName={"Middle C Position"}/>
 
       <OptionalTestButton 
-        onClick={e => props.dispatch(fetchTestType("treble"))} 
+        onClick={e => props.dispatch(fetchTestType({type: "treble", testName: "Treble Clef"}))} 
         testName={"Treble Clef"}/>
 
       <OptionalTestButton 
-        onClick={e => props.dispatch(fetchTestType("bass"))} 
+        onClick={e => props.dispatch(fetchTestType({type: "bass", testName: "Bass Clef")})} 
         testName={"Bass Clef"}/>
 
     </div>
