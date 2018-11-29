@@ -17,12 +17,9 @@
 }
 .user-image {
   border: 1px solid #aaa;
-  border-radius: 100%;
   width: 8rem;
-  height: 8rem;
   text-align: center;
   margin: 2rem;
-  padding-top: 1.5rem;
 }
 
 .user-image p {
