@@ -97,7 +97,6 @@ export default function reducer(state = initialState, action) {
       })
     case TEST_SUCCESS: 
       return Object.assign({}, state, {
-        loading: false,
         data: action.test
       })
     case TEST_ERROR: 
@@ -108,6 +107,7 @@ export default function reducer(state = initialState, action) {
     case BEGIN_TEST: 
       return Object.assign({}, state, {
         testName: action.testName,
+        loading: false,
         currentQuestion: 1,
         hasStarted: !state.hasFinished,
         hasFinished: false,
