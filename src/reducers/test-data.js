@@ -12,7 +12,8 @@ import {
   SET_TIME_REMAINING,
   TEST_REQUEST,
   TEST_SUCCESS,
-  TEST_ERROR
+  TEST_ERROR,
+  setHasStarted
 } from '../actions/test-data';
 
 const initialState = {
@@ -108,6 +109,7 @@ export default function reducer(state = initialState, action) {
       return Object.assign({}, state, {
         testName: action.testName,
         currentQuestion: 1,
+        hasStarted: !state.hasFinished,
         hasFinished: false,
         wrongAnswers: [],
         correctAnswers: [],

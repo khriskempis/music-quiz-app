@@ -136,6 +136,8 @@ export const fetchTestMiddle = () => dispatch => {
     })
     .then(testData => {
       dispatch(testSuccess(testData))
+    })
+    .then(()=> {
       dispatch(beginTest("Middle C Position"))
     })
     .catch(err => {
