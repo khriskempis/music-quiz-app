@@ -7,7 +7,7 @@ function selection(props) {
   return (
     <div className="test-area">
       <header>
-        <h1>Take a Test</h1>
+        <h1>Take a Practice Test</h1>
       </header>
 
       <Options />

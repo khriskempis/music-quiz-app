@@ -9,7 +9,6 @@ import Loading from '../../components/loading';
 
 import Navigation from '../../components/navigation'
 import MyDashboardButton from '../../components/myDashboardButton';
-import { stat } from 'fs';
 
 const mapStateToProps = state => ({
   testName: state.testData.testName,
@@ -30,6 +29,7 @@ function Test(props) {
 
   return (
     <div className="test-page">
+      <link href="https://fonts.googleapis.com/css?family=Muli:400,700" rel="stylesheet"></link>
       <Navigation />
       
       <main>
@@ -41,7 +41,7 @@ function Test(props) {
 
         <section>
           <TestForm />
-          </section>
+        </section>
 
       </main>
     </div>

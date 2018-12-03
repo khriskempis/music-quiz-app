@@ -29,25 +29,5 @@ export function nextButton(props) {
     );
 }
 
-// {if(props.isLoggedIn){
-//   <Link to="/results" >
-//     <button className="test-button" onClick={e => props.endTest()}>See Results</button>
-//   </Link>  
-// } else {
-//   <Link to="/register" >
-//     <button className="test-button">See Results</button>
-//   </Link>  
-// }}
-
-// {props.isLoggedIn ? (
-//   <Link to="/results" >
-//     <button className="test-button" onClick={e => props.endTest()}>See Results</button>
-//   </Link>  
-// ) : (
-//   <Link to="/register" >
-//     <button className="test-button">See Results</button>
-//   </Link>
-// )}
-
 
 export default connect(mapStateToProps)(nextButton);

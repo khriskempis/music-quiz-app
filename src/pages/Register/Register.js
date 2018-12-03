@@ -3,6 +3,9 @@ import {connect} from 'react-redux';
 import { Link } from 'react-router-dom';
 
 import RegisterForm from '../../components/registerForm';
+import Navigation from '../../components/navigation';
+
+import './register.css'
 
 const mapStateToProps = state => ({
   hasFinished: state.testData.hasFinished,
@@ -14,7 +17,8 @@ function Register(props) {
 
   return (
 
-    <div>
+    <div className="register-container">
+      <Navigation />
       <header>
         <h2>Register</h2>
       </header>

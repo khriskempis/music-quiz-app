@@ -3,7 +3,8 @@ import {Field, reduxForm, focus} from 'redux-form';
 import Input from '../../components/input';
 import {login} from '../../actions/auth';
 import {required, nonEmpty} from '../../validators';
-import {Redirect} from 'react-router-dom';
+
+import {Redirect, Link} from 'react-router-dom';
 
 import './signIn.css';
 
@@ -63,6 +64,8 @@ export class SignIn extends React.Component {
                   className="sign-in-button"
                   disabled={this.props.pristine || this.props.submitting}
                   >Sign In</button>
+                  <Link to="/register">
+                  <button>Register</button> </Link>
             </form>
           </div>
       </main>

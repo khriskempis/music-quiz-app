@@ -8,7 +8,7 @@ function hero(props){
   return (
     <div>
       <header>
-        <h1>Music Test</h1>
+        <h1>Music Tests</h1>
         <p>The best way to practice your sight-reading skills</p>
         <Link to="/test">
           <button 

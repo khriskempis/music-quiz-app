@@ -3,14 +3,16 @@ nav {
   top: 0;
   left: 0;
   right: 0;
-  z-index: 10;
-  padding: 1% 0; 
-  background-color: #aaa;
+  z-index: 3;
+  text-align: left;
 }
 
 nav,
 footer {
-  padding: 1% 0; 
-  background-color: #aaa;
+  display: flex;
+  padding: 2% 1%; 
+  font-weight: 700;
+  color: #fff;
+  background-color: #1D2323;
 }
 

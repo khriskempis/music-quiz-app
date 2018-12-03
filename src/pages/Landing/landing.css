@@ -2,6 +2,10 @@
   padding: 12% 0;
 }
 
+.landing h3 {
+  font-size: 1em;
+}
+
 .landing-page section {
   min-height: 200px; 
   padding: 6% 0;

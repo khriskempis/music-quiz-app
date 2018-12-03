@@ -23,10 +23,6 @@ const initialState = {
   numberOfQuestions: 10,
   currentQuestion: 1,
   currentCard: {
-    imgUrl: "test",
-    noteId: "A3",
-    note: "A",
-    clef: "treble"
   },
   testName: "Treble Clef",
   wrongAnswers: [],
@@ -34,17 +30,23 @@ const initialState = {
   hasStarted: false,
   hasFinished: false,
   timeRemaining: null,
+  responses: [
+    "Great Job",
+    "Keep It Up!",
+    "Amazing",
+    "Are you A Musician?"
+  ],
   data: [
     {
-      imgUrl: "test",
-      noteId: "A3",
-      note: "A",
+      imgUrl: "https://res.cloudinary.com/khrisraymond/image/upload/v1543184876/bass/treble%20jpgs/C4.jpg",
+      noteId: "C4",
+      note: "C",
       clef: "treble"
     },
     {
-      imgUrl: "test",
-      noteId: "B3",
-      note: "B",
+      imgUrl: "https://res.cloudinary.com/khrisraymond/image/upload/v1543184876/bass/treble%20jpgs/D4.jpg",
+      noteId: "D4",
+      note: "D",
       clef: "treble"
     }
   ]

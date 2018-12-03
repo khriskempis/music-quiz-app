@@ -8,7 +8,7 @@ import OptionalTestButton from './optionalTest';
 function options(props) {
   return (
     <div className="options-buttons">
-      <p>Choose a one:</p>
+      <p>Choose one:</p>
       <OptionalTestButton 
         onClick={e => props.dispatch(fetchTestMiddle())} 
         testName={"Middle C Position"}/>

@@ -3,7 +3,7 @@ import './Test.css';
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
-import MultipleChoice from './multipleChoice';
+import PianoKeyboard from './pianoKeyboard';
 import Timer from './timer';
 import QuestionNumber from './question-number';
 import NoteImg from './noteImg'
@@ -22,7 +22,8 @@ const mapStateToProps = state => ({
   data: state.testData.data,
   currentCard: state.testData.currentCard,
   hasStarted: state.testData.hasStarted,
-  hasFinished: state.testData.hasFinished
+  hasFinished: state.testData.hasFinished,
+  responses: state.testData.responses
 })
 
 export class testForm extends Component {
@@ -50,7 +51,6 @@ export class testForm extends Component {
 
   checkAnswer(answer){
     // updates UI where user has made an answer
-
     this.setState({
       hasAnswered: true,
     });
@@ -72,20 +72,26 @@ export class testForm extends Component {
 
     return (
       <div>
-        <form className="test-container" onSubmit={e => e.preventDefault()}>
+        <div className="status-bar">
           <Timer 
             hasAnswered={this.state.hasAnswered}
             hasStarted={this.props.hasStarted}
             hasFinished={this.props.hasFinished}
             endTest={e => this.endTest()}/>
 
+          <StatusMessage 
+            response={this.props.responses[Math.floor(Math.random() * this.props.responses.length)]}
+            hasAnswered={this.state.hasAnswered}
+            note={this.props.currentCard.note} />
+
           <QuestionNumber />
+        </div>
+
+        <form className="test-container" onSubmit={e => e.preventDefault()}>
 
           <NoteImg imgUrl={this.props.currentCard.imgUrl} />
-          {this.state.hasAnswered &&
-          <StatusMessage note={this.props.currentCard.note}/>}
 
-          <MultipleChoice 
+          <PianoKeyboard 
             disabled={this.state.hasAnswered} 
             answers={this.state.answers} 
             onClick={answer => this.checkAnswer(answer)}/>
