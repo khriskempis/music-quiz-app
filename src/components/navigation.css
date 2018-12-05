@@ -5,14 +5,16 @@ nav {
   right: 0;
   z-index: 3;
   text-align: left;
+  background-color: #fff
 }
 
 nav,
 footer {
   display: flex;
-  padding: 2% 1%; 
+  justify-content: space-between;
+  padding: 3% 4%; 
   font-weight: 700;
-  color: #fff;
-  background-color: #1D2323;
+  color: #333;
+  /* background-color: #1D2323; */
 }
 

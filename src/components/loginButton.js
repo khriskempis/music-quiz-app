@@ -25,7 +25,7 @@ export function button(props){
         <Link to="/signin" >
           <button 
           className="dashboard-button"
-          >Sign In</button>
+          >LOGIN</button>
         </Link>
       )}
     </div>

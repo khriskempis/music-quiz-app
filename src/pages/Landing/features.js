@@ -2,7 +2,7 @@ import React from 'react';
 
 export function features(){
     return (
-      <div>
+      <div className="features-section">
         <h2>Upcoming Features</h2>
         <ul>
           <li>Musc tests with accidentals</li>

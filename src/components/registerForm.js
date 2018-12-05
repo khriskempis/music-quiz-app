@@ -7,6 +7,8 @@ import {login} from '../actions/auth'
 import Input from './input';
 import {required, nonEmpty, matches, length, isTrimmed} from '../validators';
 
+import './registerForm.css'
+
 const passwordLength = length({min: 6, max: 30});
 const matchesPassword = matches('password');
 
@@ -64,7 +66,9 @@ class registerForm extends Component {
             validate={[required, nonEmpty, matchesPassword]}
           />
 
-          <button type="submit">Sign Me Up!</button>
+          <button 
+            className="register-button"
+            type="submit">Sign Me Up!</button>
 
           {/* {this.props.hasFinished ? (
           <Link to="/dashboard" ><button type="submit">Sign me up!</button></Link>

@@ -7,13 +7,15 @@ import {fetchTestMiddle} from '../../actions/test-data'
 function hero(props){
   return (
     <div>
-      <header>
-        <h1>Music Tests</h1>
-        <p>The best way to practice your sight-reading skills</p>
+      
+      <header className="hero-section">
+        <h1>The best way to practice your sight-reading!</h1>
+        <p>Introducing Music Tests</p>
         <Link to="/test">
           <button 
+            className="hero-button"
             onClick={e => props.dispatch(fetchTestMiddle())}>
-            Take a Test!
+            Take a Test
           </button>
         </Link>
       </header>

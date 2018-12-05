@@ -34,7 +34,7 @@ function pianoKeyboard(props) {
       <ul className="set">
         {keyboard}
       </ul>
-      <ul className="set">
+      {/* <ul className="set">
         <li className="note-name C">C</li>
         <li className="note-name D">D</li>
         <li className="note-name E">E</li>
@@ -42,7 +42,7 @@ function pianoKeyboard(props) {
         <li className="note-name G">G</li>
         <li className="note-name A">A</li>
         <li className="note-name B">B</li>
-      </ul>
+      </ul> */}
     </div>
   );
 }
