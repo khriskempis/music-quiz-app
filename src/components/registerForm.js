@@ -36,35 +36,51 @@ class registerForm extends Component {
         <form 
           className="register-form"
           onSubmit={this.props.handleSubmit(values => this.onSubmit(values))}>
-          <label htmlFor="name">Name</label>
-          <Field name="name" id="name" type="text" component={Input} />
+      
 
-          <label htmlFor="email">Email</label>
-          <Field 
-            name="email" 
-            id="email" 
-            type="text" 
-            component={Input}
-            validate={[required, nonEmpty, isTrimmed]}  
-          />
+            <Field 
+              label="Name"
+              name="name" 
+              id="name" 
+              type="text" 
+              component={Input}
+              validate={[required, nonEmpty, isTrimmed]} />
+            
+          
 
-          <label htmlFor="password">Password</label>
-          <Field 
-            name="password" 
-            id="password" 
-            type="password" 
-            component={Input}
-            validate={[required, passwordLength, isTrimmed]}  
-          />
+          
+            <Field 
+              label="Email"
+              name="email" 
+              id="email" 
+              type="text" 
+              component={Input}
+              validate={[required, nonEmpty, isTrimmed]}  
+            />
+          
 
-          <label htmlFor="confirm-password">Confirm Password</label>
-          <Field 
-            name="confirm-password" 
-            id="confirm-password" 
-            type="password" 
-            component={Input}
-            validate={[required, nonEmpty, matchesPassword]}
-          />
+          
+            <Field 
+              label="Password"
+              name="password" 
+              id="password" 
+              type="password" 
+              component={Input}
+              validate={[required, passwordLength, isTrimmed]}  
+            />
+          
+
+          
+            <Field 
+              label="Confirm Password"
+              name="confirm-password" 
+              id="confirm-password" 
+              type="password" 
+              component={Input}
+              validate={[required, nonEmpty, matchesPassword]}
+            />
+            <label htmlFor="confirm-password">Confirm Password</label>
+          
 
           <button 
             className="register-button"

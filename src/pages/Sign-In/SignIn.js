@@ -16,6 +16,8 @@ export class SignIn extends React.Component {
 
   render() {
 
+    console.log(this.props)
+
     if(this.props.submitSucceeded){
       return <Redirect to="/dashboard" />
     }
@@ -30,7 +32,7 @@ export class SignIn extends React.Component {
     }
     return (
         <main>
-          <header>
+          <header className="sign-in-header">
             <h3>Welcome</h3>
             <p>Sign in to view your Dashboard</p>
           </header>
@@ -41,8 +43,8 @@ export class SignIn extends React.Component {
               onSubmit={this.props.handleSubmit(values => this.onSubmit(values))}>
               <div>
                 {error}
-                <label htmlFor="username">Email</label>
                 <Field 
+                  label="Email"
                   component={Input}
                   type="text" 
                   id="email" 
@@ -51,8 +53,8 @@ export class SignIn extends React.Component {
                   validate={[required, nonEmpty]}/>
               </div>
               <div>
-                <label htmlFor="password">Password</label>
                 <Field 
+                  label="Password"
                   component={Input}
                   type="password" 
                   id="password" 
@@ -65,7 +67,7 @@ export class SignIn extends React.Component {
                   disabled={this.props.pristine || this.props.submitting}
                   >Sign In</button>
                   <Link to="/register">
-                  <button>Register</button> </Link>
+                  <button className="sign-in-register-button">Register</button> </Link>
             </form>
           </div>
       </main>

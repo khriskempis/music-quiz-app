@@ -21,18 +21,19 @@ export default class Input extends React.Component {
         }
 
         return (
-            <div className="register-input">
-                <label htmlFor={this.props.input.name}>
-                    {this.props.label}
-                    {error}
-                    {warning}
-                </label>
-                <input
+            <div className="group">
+                <input 
                     {...this.props.input}
                     id={this.props.input.name}
                     type={this.props.type}
                     ref={input => (this.input = input)}
                 />
+                <span className="bar"></span>
+                <label className={this.props.meta.visited ? "valid-input" : ''}htmlFor={this.props.input.name}>
+                    {this.props.label}
+                </label>
+                {error}
+                {warning}
             </div>
         );
     }
