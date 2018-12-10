@@ -8,7 +8,8 @@ function optionalTest(props) {
     <div>
       <Link to="/test"> 
         <button 
-        onClick={e => props.onClick()}
+          className="dashboard-test-button"
+          onClick={e => props.onClick()}
         >{props.testName}</button>
       </Link>
     </div>

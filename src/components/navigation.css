@@ -1,14 +1,14 @@
-nav {
+.nav-fixed {
   position: fixed;
   top: 0;
   left: 0;
   right: 0;
-  z-index: 3;
+  z-index: 100;
   text-align: left;
   background-color: #fff
 }
 
-nav,
+.nav-fixed,
 footer {
   display: flex;
   justify-content: space-between;
@@ -16,5 +16,17 @@ footer {
   font-weight: 700;
   color: #333;
   /* background-color: #1D2323; */
+}
+
+.nav-scroll {
+  position: relative;
+  z-index: 60;
+  display: flex;
+  justify-content: space-between;
+  padding: 3% 4%; 
+  font-weight: 700;
+  color: #333;
+  background-color: #fff;
+  border-bottom: 1px solid #aaa;
 }
 

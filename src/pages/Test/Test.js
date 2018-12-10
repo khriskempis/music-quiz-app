@@ -7,7 +7,7 @@ import TestHeader from './testHeader';
 import Loading from '../../components/loading';
 
 
-import Navigation from '../../components/navigation'
+import Navigation from '../../components/navigationsScroll'
 import MyDashboardButton from '../../components/myDashboardButton';
 
 const mapStateToProps = state => ({

@@ -5,9 +5,9 @@ import Options from './options'
 
 function selection(props) {
   return (
-    <div className="test-area">
+    <div className={props.class}>
       <header>
-        <h1>Take a Practice Test</h1>
+        <h1>Take a {props.selection ? props.selection : ''} Test</h1>
       </header>
 
       <Options />

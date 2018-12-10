@@ -5,7 +5,7 @@ import {Redirect} from 'react-router-dom';
 import './dashboard.css';
 
 import Sidebar from '../../components/sidebar';
-import Navigation from '../../components/navigation';
+import Navigation from '../../components/navigationsScroll';
 import Selection from './selection';
 import { setHasFinished, setHasStarted } from '../../actions/test-data';
 
@@ -31,9 +31,19 @@ class Dashboard extends Component {
 
         <Navigation />
 
-        <Sidebar user={this.props.user.name}/>
+        <Sidebar 
+          user={this.props.user.name}
+          />
+
         <section className="dashboard">
-          <Selection />
+
+          <Selection 
+          class={"practice-test test-area"}
+          selection={"Practice"}/>
+
+          <Selection 
+          class={"test test-area"}
+          />
         </section>
         
       </div>

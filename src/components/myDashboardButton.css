@@ -1,3 +1,12 @@
-.my-dashboard-button {
-  text-align: left
+.my-dashboard-button a {
+  text-align: left;
+  background-color: #5c6ac4;
+  border-radius: 4px; 
+  width: 34%;
+  color: #fff;
+  font-weight: 600;
+  font-size: 10px;
+  text-transform: uppercase;
+  text-decoration: none;
+  padding: 2%;
 }

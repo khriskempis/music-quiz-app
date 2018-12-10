@@ -1,3 +1,65 @@
 .results-container {
-  margin-top: 10%;
+  margin: 7% auto;
+  width: 80%;
+}
+
+.results-dashboard-button{
+  text-align: left;
+  margin-bottom: 3rem;
+}
+
+.results-display {
+  margin-bottom: 2rem;
+}
+
+.results-display header {
+  margin-bottom: 2rem;
+}
+
+.score-display {
+  display: block;
+  margin-top: 1rem;
+  font-size: 2em;
+}
+
+.score-details {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding: 15% 4%;
+  border-top: 1px solid rgb(206, 206, 206);
+}
+
+.score-details .title,
+.score-details .detail {
+  display: block;
+  margin-bottom: 1rem;
+}
+
+.title {
+  color: rgb(117, 117, 117);
+}
+
+.score-details .title {
+  width: 50%;
+  text-align: right;
+  color: rgb(117, 117, 117);
+}
+
+.score-details .detail {
+  display: block;
+  width: 30%;
+  margin-left: 20%;
+  text-align: left;
+}
+
+.take-again-button {
+  text-transform: uppercase;
+  font-weight: 600;
+  padding: 10px 25px;
+  border: 2px solid rgb(243, 243, 243);;
+  border-radius: 4px;
+  background-color: rgb(243, 243, 243);;
+  color: rgb(84, 97, 139);
 }

@@ -8,7 +8,7 @@ import LogInButton from './loginButton';
 
 function navigation(props) {
   return (
-      <nav>
+      <nav className="nav-fixed">
         <Logo />
         <LogInButton />
       </nav>
