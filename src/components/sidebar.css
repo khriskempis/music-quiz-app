@@ -49,5 +49,21 @@
   right: -50px;
   bottom: -50px;
   width: 30%;
-  
+}
+
+@media only screen and (min-width: 960px){
+  .sidebar-links {
+    position: relative;
+    left: 0;
+    height: 100%;
+    width: 30%;
+  }
+
+  .sidebar-left {
+    float: left;
+  }
+
+  .toggle-menu-button {
+    z-index: 0;
+  }
 }

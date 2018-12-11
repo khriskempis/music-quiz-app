@@ -10,7 +10,7 @@ export function features(){
           <li>Weekly Objectives</li>
           <li>Sign up under your private teacher</li>
         </ul>
-        <p>And all of your ideas!</p> 
+        <p>And your ideas!</p> 
       </div>
     );
 }

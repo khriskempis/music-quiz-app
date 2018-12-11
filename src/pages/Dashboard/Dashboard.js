@@ -35,7 +35,7 @@ class Dashboard extends Component {
           user={this.props.user.name}
           />
 
-        <section className="dashboard">
+        <section className="dashboard-section">
 
           <Selection 
           class={"practice-test test-area"}

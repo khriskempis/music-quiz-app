@@ -20,7 +20,7 @@ const keyboardArray = [
 function pianoKeyboard(props) {
   const keyboard = keyboardArray.map((data, index) => 
       <li 
-        className={`${data[0]} ${data[1]}`}
+        className={`piano-key ${data[0]} ${data[1]}`}
         key={index} 
         onClick={e => props.onClick(data[1])}>
       </li>

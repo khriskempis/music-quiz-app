@@ -1,5 +1,5 @@
 .dashboard {
-  /* margin-left: 20%; */
+ display: flex;
 }
 
 .test-area {
@@ -17,6 +17,7 @@
   padding: 5%;
   background-size: cover;
   background-repeat: no-repeat;
+  width: 100%; 
 }
 
 .practice-test header{
@@ -27,10 +28,6 @@
 .test header {
   background-image: linear-gradient(rgba(99, 99, 99, 0.801), rgba(127, 128, 129, 0.589)),
     url(https://res.cloudinary.com/khrisraymond/image/upload/v1544163328/imgs/music-test/classroom.jpg);
-}
-
-.test-area header {
-  width: 100%; 
 }
 
 .options-buttons {
@@ -52,4 +49,14 @@
   font-size: 1.em;
   font-weight: 600;
   text-transform: uppercase;
+}
+
+@media only screen and (min-width: 960px){
+  .test-area {
+    width: 45%;
+    margin-left: 40%;
+  }
+  .dashboard-section {
+    
+  }
 }

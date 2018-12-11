@@ -30,3 +30,16 @@ footer {
   border-bottom: 1px solid #aaa;
 }
 
+@media only screen and (min-width: 960px){
+
+  .nav-fixed,
+  .nav-scroll {
+    padding: 2% 3%;
+  }
+
+  .nav-fixed {
+    justify-content: space-between;
+  }
+}
+
+

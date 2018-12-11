@@ -82,15 +82,14 @@ label {
   font-size: 1.em;
   font-weight: 600;
   text-transform: uppercase;
-  /* box-shadow: 0 10px 20px 0 rgba(0,0,0,.25); */
-  transition: box-shadow .25s linear;
+  transition: box-shadow .15s ease-in;
   width: 100%;
-  /* margin: 5% 0.5%; */
 }
 
 .register-button:hover {
   color: #fff;
-  box-shadow: 0 7px 14px rgba(0, 0, 0, 0.18), 0 5px 5px rgba(0, 0, 0, 0.12);
+  font-size: 1.5em;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.18), 0 5px 5px rgba(0, 0, 0, 0.12);
 }
 
 .register-form-container {
@@ -108,4 +107,13 @@ label {
   right: 0px;
   top: -14px;
   transition: 300ms ease all;
+}
+
+
+@media only screen and (min-width: 960px){
+
+  .register-form-container {
+    width: 40%;
+  }
+
 }

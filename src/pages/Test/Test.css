@@ -97,10 +97,6 @@ p{
 
 @media only screen and (min-width: 960px){
 
-  .test-page {
-    margin-top: 6rem;
-  }
-
   .status-bar {
     max-width: 50%;
   }

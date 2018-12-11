@@ -47,3 +47,9 @@
 .sign-in-register-button:hover:enabled {
   background-color: #dfe4e8
 }
+
+@media only screen and (min-width: 960px){
+  .sign-in-form-container {
+    width: 40%;
+  }
+}
