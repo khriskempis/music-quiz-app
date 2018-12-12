@@ -4,9 +4,10 @@
 }
 
 .sign-in-form-container {
+  position: relative;
   padding: 3rem 0;
   width: 60%;
-  margin: 0 auto;
+  margin: 2em auto;
 }
 
 .sign-in-button {
@@ -48,8 +49,19 @@
   background-color: #dfe4e8
 }
 
+.sign-in-form-error {
+  color: #D40300;
+  position: absolute;
+  top: 0.5em;
+  left: 1em;
+}
+
 @media only screen and (min-width: 960px){
   .sign-in-form-container {
     width: 40%;
+  }
+
+  .sign-in-form-error {
+    left: 6em;
   }
 }

@@ -1,6 +1,8 @@
 import React from 'react';
 import './piano-keys.css';
 
+
+import StatusMessage from './statusMessage';
 import NextButton from './nextButton';
 
 const keyboardArray = [
@@ -35,13 +37,19 @@ function pianoKeyboard(props) {
   return (
 
     <div className="answers-container">
-        <div className={props.hasAnswered ? "overlay response" : ""}>
+        <div className={props.hasAnswered ? "overlay animated fadeIn faster" : ""}>
         {props.hasAnswered && 
-          <NextButton 
-          updateCard={e => props.updateCard()}
-          endTest={e => props.endTest()}/>}
+          <>
+            <StatusMessage 
+              isCorrect={props.isCorrect}
+              hasAnswered={props.hasAnswered}
+            />
+            <NextButton 
+            updateCard={e => props.updateCard()}
+            endTest={e => props.endTest()}/>
+          </>}
         </div>
-      <ul className="set">
+      <ul className={props.hasAnswered ? "set animated fadeOut faster" : "set"}>
         {keyboard}
       </ul>
     </div>

@@ -28,7 +28,7 @@ function Test(props) {
   }
 
   return (
-    <div className="test-page">
+    <div className="test-page ">
       <link href="https://fonts.googleapis.com/css?family=Muli:400,700" rel="stylesheet"></link>
       <Navigation />
       

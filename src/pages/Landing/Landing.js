@@ -26,7 +26,6 @@ class Landing extends Component {
     return (
 
       <div className="landing-page">    
-          <link href="https://fonts.googleapis.com/css?family=Muli:400,700" rel="stylesheet"></link>
     
           <Navigation />
           <main>
@@ -36,7 +35,7 @@ class Landing extends Component {
             <Details />
           </section>
 
-          <section>
+          <section className="section-1">
             <Features />
           </section>
 

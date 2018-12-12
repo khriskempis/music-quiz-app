@@ -47,25 +47,23 @@ p{
   height: 5em;
 }
 
-.test-timer {
-  /* position: absolute;
-  left: 0;
-  top: -3rem; */
-}
-
-.test-question-number {
-  /* position: absolute;
-  right: 0;
-  top: -4rem; */
-}
-
 .test-status-message {
-  width: 58%;
+  width: 60%;
 }
 
 .test-correct-note {
   font-size: 2em;
   display: block;
+}
+
+.correct {
+  font-size: 1.5em;
+  color: green;
+}
+
+.incorrect {
+  font-size: 1.5em;
+  color: red;
 }
 
 
@@ -74,17 +72,20 @@ p{
   margin-bottom: 2rem;
 }
 
-.answers-container button {
-  width: 14.28%;
-  padding: 0.5rem 0;
-  margin: 0.5rem 0;
-  height: 5rem;
+.test-button {
+  position: absolute;
+  background-color: rgba(221, 221, 221, 0.11);
+  border: none;
+  border-radius: 50%;
+  width: 50px;
+  padding: 2%;
+  top: 35%;
+  right: 10%;
+  transition: right .3s ease;
 }
 
-.test-button {
-
-  padding: 0.5rem 2rem;
-  border-radius: 5px;
+.test-button:hover {
+  right: 9%;
 }
 
 .white-keys {
@@ -103,7 +104,7 @@ p{
   }
   
   .test-status-message {
-    width: 35%;
+    width: 60%;
   }
 
 }

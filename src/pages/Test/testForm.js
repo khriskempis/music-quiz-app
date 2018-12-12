@@ -22,15 +22,14 @@ const mapStateToProps = state => ({
   data: state.testData.data,
   currentCard: state.testData.currentCard,
   hasStarted: state.testData.hasStarted,
-  hasFinished: state.testData.hasFinished,
-  responses: state.testData.responses
+  hasFinished: state.testData.hasFinished
 })
 
 export class testForm extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      answers: ["C", "D", "E", "F", "G", "A", "B"],
+      isCorrect: null,
       hasAnswered: false,
     };
   }
@@ -45,21 +44,28 @@ export class testForm extends Component {
     this.props.dispatch(setCurrentQuestion());
     // updates UI state where user has not answered yet 
     this.setState({
-      hasAnswered: false
+      hasAnswered: false,
+      isCorrect: null
     })
   }
 
   checkAnswer(answer){
     // updates UI where user has made an answer
     this.setState({
-      hasAnswered: true,
+      hasAnswered: true
     });
 
     const correctAnswer = this.props.currentCard.note
 
     if (answer !== correctAnswer){
+      this.setState({
+        isCorrect: false
+      })
       this.props.dispatch(addWrongAnswer(correctAnswer))
     } else {
+      this.setState({
+        isCorrect: true
+      })
       this.props.dispatch(addCorrectAnswer(correctAnswer))
     }
   }
@@ -79,11 +85,6 @@ export class testForm extends Component {
             hasFinished={this.props.hasFinished}
             endTest={e => this.endTest()}/>
 
-          <StatusMessage 
-            response={this.props.responses[Math.floor(Math.random() * this.props.responses.length)]}
-            hasAnswered={this.state.hasAnswered}
-            note={this.props.currentCard.note} />
-
           <QuestionNumber />
         </div>
 
@@ -92,6 +93,7 @@ export class testForm extends Component {
           <NoteImg imgUrl={this.props.currentCard.imgUrl} />
 
           <PianoKeyboard 
+            isCorrect={this.state.isCorrect}
             hasAnswered={this.state.hasAnswered} 
             onClick={answer => this.checkAnswer(answer)}
             updateCard={e => this.updateCard()}

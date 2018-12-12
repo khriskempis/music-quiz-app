@@ -3,7 +3,7 @@ import {connect} from 'react-redux';
 import { Link } from 'react-router-dom';
 
 import RegisterForm from '../../components/registerForm';
-import Navigation from '../../components/navigation';
+import Navigation from '../../components/navigationsScroll';
 
 import './register.css'
 

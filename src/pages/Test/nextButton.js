@@ -1,6 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
+import NextIcon from '../../assets/icons/next'
 
 const mapStateToProps = state => ({
   isLoggedIn: state.auth.currentUser !== null,
@@ -22,7 +23,9 @@ export function nextButton(props) {
               </Link>
             )
           ) : (
-            <button className="test-button" onClick={e => props.updateCard()}>Next</button>
+            <button className="test-button" onClick={e => props.updateCard()}>
+              <NextIcon />
+            </button>
           )
         }  
       </div>

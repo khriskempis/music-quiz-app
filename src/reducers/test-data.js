@@ -111,7 +111,7 @@ export default function reducer(state = initialState, action) {
         testName: action.testName,
         loading: false,
         currentQuestion: 1,
-        hasStarted: !state.hasFinished,
+        hasStarted: !state.hasStarted,
         hasFinished: false,
         wrongAnswers: [],
         correctAnswers: [],

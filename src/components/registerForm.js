@@ -79,7 +79,6 @@ class registerForm extends Component {
               component={Input}
               validate={[required, nonEmpty, matchesPassword]}
             />
-            <label htmlFor="confirm-password">Confirm Password</label>
           
 
           <button 

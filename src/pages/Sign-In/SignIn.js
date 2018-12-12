@@ -16,16 +16,15 @@ export class SignIn extends React.Component {
 
   render() {
 
-    console.log(this.props)
-
     if(this.props.submitSucceeded){
       return <Redirect to="/dashboard" />
     }
 
     let error;
     if(this.props.error){
+      console.log(this.props.error)
       error = (
-        <div className="form-error" aria-live="polite">
+        <div className="sign-in-form-error animated shake" aria-live="polite">
           {this.props.error}
         </div>
       )
@@ -66,8 +65,9 @@ export class SignIn extends React.Component {
                   className="sign-in-button"
                   disabled={this.props.pristine || this.props.submitting}
                   >Sign In</button>
-                  <Link to="/register">
-                  <button className="sign-in-register-button">Register</button> </Link>
+                <Link to="/register">
+                  <button className="sign-in-register-button">Register</button> 
+                </Link>
             </form>
           </div>
       </main>
