@@ -92,15 +92,13 @@ export class testForm extends Component {
           <NoteImg imgUrl={this.props.currentCard.imgUrl} />
 
           <PianoKeyboard 
-            disabled={this.state.hasAnswered} 
-            answers={this.state.answers} 
-            onClick={answer => this.checkAnswer(answer)}/>
+            hasAnswered={this.state.hasAnswered} 
+            onClick={answer => this.checkAnswer(answer)}
+            updateCard={e => this.updateCard()}
+            endTest={e => this.endTest()}
+          />
 
         </form>
-        {this.state.hasAnswered && 
-        <NextButton 
-        updateCard={e => this.updateCard()}
-        endTest={e => this.endTest()}/>}
       </div>
     );
   }

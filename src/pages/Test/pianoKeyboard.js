@@ -1,6 +1,8 @@
 import React from 'react';
 import './piano-keys.css';
 
+import NextButton from './nextButton';
+
 const keyboardArray = [
   ["white", "C"],
   ["black", "C#"],
@@ -17,32 +19,31 @@ const keyboardArray = [
 ]
 
 
+
 function pianoKeyboard(props) {
-  const keyboard = keyboardArray.map((data, index) => 
+  // creates piano key and assigns onClick with info on that key
+  const keyboard = keyboardArray.map((arr, index) => 
       <li 
-        className={`piano-key ${data[0]} ${data[1]}`}
+        className={`piano-key ${arr[0]} ${arr[1]}`}
         key={index} 
-        onClick={e => props.onClick(data[1])}>
+        onClick={e => props.onClick(arr[1])}
+        >
       </li>
     );
+
+
   return (
-    // <div className="answers-container">
-    //   {keyboard}
-    // </div>
 
     <div className="answers-container">
+        <div className={props.hasAnswered ? "overlay response" : ""}>
+        {props.hasAnswered && 
+          <NextButton 
+          updateCard={e => props.updateCard()}
+          endTest={e => props.endTest()}/>}
+        </div>
       <ul className="set">
         {keyboard}
       </ul>
-      {/* <ul className="set">
-        <li className="note-name C">C</li>
-        <li className="note-name D">D</li>
-        <li className="note-name E">E</li>
-        <li className="note-name F">F</li>
-        <li className="note-name G">G</li>
-        <li className="note-name A">A</li>
-        <li className="note-name B">B</li>
-      </ul> */}
     </div>
   );
 }

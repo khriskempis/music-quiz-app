@@ -10,6 +10,10 @@
   background-color: #fff;
 }
 
+/* .landing-page section:last-child {
+  background-color: ;
+} */
+
 
 li {
   list-style: none;
@@ -19,6 +23,11 @@ li {
 
 .landing-page header {
   padding: 12% 8%;
+  margin-top: 3rem;
+  height: 60vh;
+  background-image: linear-gradient(rgba(255, 253, 253, 0.863), rgba(243, 243, 243, 0.438)),
+    url(https://res.cloudinary.com/khrisraymond/image/upload/v1544563412/imgs/music-test/hero-photo.jpg);
+  background-size: cover;
 }
 
 .hero-section h1 {
@@ -50,7 +59,6 @@ li {
   font-size: 1.em;
   font-weight: 600;
   text-transform: uppercase;
-  /* box-shadow: 0 10px 20px 0 rgba(0,0,0,.25); */
   transition: box-shadow .25s linear;
 }
 
@@ -60,15 +68,27 @@ li {
 
 @media only screen and (min-width: 960px){
   
+  .landing-page header {
+    margin-top: 4rem;
+    height: 50vh;
+  }
+
+  .landing-page section {
+    padding: 6% 0 0; 
+  }
 }
 
 /* === DETAILS SECTION === */
 
 .details-section p,
 .features-section p,
-li {
+.features-section li {
   color: #637381;
   line-height: 25px;
+}
+
+.details-section p {
+  margin: 1em 0;
 }
 
 .register-input {
@@ -88,8 +108,8 @@ li {
   box-sizing: border-box;
 }
 
-.detail {
-  margin: 0 auto;
+.details-section .detail {
+  margin: 6rem auto;
   width: 60%;
 }
 
@@ -97,6 +117,8 @@ li {
   margin: 2rem auto;
   width: 40%;
 }
+
+/* === FEATURES SECTION === */
 
 .features-section {
   margin: 0 2rem;
@@ -112,8 +134,12 @@ li {
 }
 
 @media only screen and (min-width: 960px){
+  .detail-section .detail {
+    margin: 6rem auto 0;
+  }
+
   .icon-container,
-  .detail {
+  .detail-section .detail {
     width: 40%;
   }
 

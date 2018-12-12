@@ -12,6 +12,7 @@
   font-weight: 600;
   text-transform: uppercase;
   transition: background-color .2s linear;
+  transition: color .2s linear;
 }
 
 .dashboard-button:hover:enabled {

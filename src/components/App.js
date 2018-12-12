@@ -14,6 +14,7 @@ function App(props){
   return (
     <Router>
       <div className="App">
+      <link rel="stylesheet" href="animate.min.css"></link>
         <main>
           <Switch>
             <Route exact path="/" component={Landing} />
