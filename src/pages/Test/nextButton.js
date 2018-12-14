@@ -15,11 +15,11 @@ export function nextButton(props) {
         {props.isTestComplete ? (
             props.isLoggedIn ? (
               <Link to="/results" >
-                <button className="test-button" onClick={e => props.endTest()}>See Results</button>
+                <button className="test-button see-results" onClick={e => props.endTest()}>See Results</button>
               </Link>  
             ) : (
               <Link to="/register" >
-                <button className="test-button">See Results</button>
+                <button className="test-button see-results">See Results</button>
               </Link>
             )
           ) : (

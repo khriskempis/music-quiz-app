@@ -7,7 +7,7 @@ import './dashboard.css';
 import Sidebar from '../../components/sidebar';
 import Navigation from '../../components/navigationsScroll';
 import Selection from './selection';
-import { setHasFinished, setHasStarted } from '../../actions/test-data';
+import { setHasFinished, setHasStarted, restartTest } from '../../actions/test-data';
 
 const mapStateToProps = state => ({
   isLoggedIn: state.auth.currentUser !== null,
@@ -17,7 +17,8 @@ const mapStateToProps = state => ({
 class Dashboard extends Component {
   componentDidMount(){
     this.props.dispatch(setHasStarted())
-    this.props.dispatch(setHasFinished());
+    this.props.dispatch(setHasFinished())
+    this.props.dispatch(restartTest());
   }
 
   render() {
@@ -38,10 +39,12 @@ class Dashboard extends Component {
         <section className="dashboard-section">
 
           <Selection 
+          numberOfQuestions={10}
           class={"practice-test test-area"}
           selection={"Practice"}/>
 
           <Selection 
+          numberOfQuestions={20}
           class={"test test-area"}
           />
         </section>

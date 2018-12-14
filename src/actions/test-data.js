@@ -12,9 +12,9 @@ export const fetchDataError = error => ({
   error
 })
 
-export const SET_NUMBER_OF_QUESTONS = "SET_NUMBER_OF_QUESTIONS";
+export const SET_NUMBER_OF_QUESTIONS = "SET_NUMBER_OF_QUESTIONS";
 export const setNumberOfQuestions = num => ({
-  type: SET_NUMBER_OF_QUESTONS,
+  type: SET_NUMBER_OF_QUESTIONS,
   num
 });
 
@@ -60,6 +60,11 @@ export const SET_TIME_REMAINING = "SET_TIME_REMAINING";
 export const setTimeRemaining = time => ({
   type: SET_TIME_REMAINING,
   time
+})
+
+export const SET_OUT_OF_TIME = "SET_OUT_OF_TIME";
+export const setOutOfTime = () => ({
+  type: SET_OUT_OF_TIME
 })
 
 export const TEST_REQUEST = "TEST_REQUEST";
@@ -109,6 +114,7 @@ export const fetchTestType = test => dispatch => {
     })
     .then(testData => {
       dispatch(testSuccess(testData))
+      dispatch(setNumberOfQuestions(test.numberOfQuestions))
       dispatch(beginTest(test.testName))
     })
     .catch(err => {
@@ -117,7 +123,7 @@ export const fetchTestType = test => dispatch => {
   )
 }
 
-export const fetchTestMiddle = () => dispatch => {
+export const fetchTestMiddle = test => dispatch => {
   dispatch(testRequest());
   return (
     fetch(`${API_SERVER_URL}/data/test/middle`, {
@@ -136,6 +142,7 @@ export const fetchTestMiddle = () => dispatch => {
     })
     .then(testData => {
       dispatch(testSuccess(testData))
+      dispatch(setNumberOfQuestions(test.numberOfQuestions))
       dispatch(beginTest("Middle C Position"))
     })
     .catch(err => {

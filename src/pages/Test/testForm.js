@@ -2,6 +2,7 @@ import './Test.css';
 
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import { Redirect } from 'react-router-dom';
 
 import PianoKeyboard from './pianoKeyboard';
 import Timer from './timer';
@@ -22,7 +23,7 @@ const mapStateToProps = state => ({
   data: state.testData.data,
   currentCard: state.testData.currentCard,
   hasStarted: state.testData.hasStarted,
-  hasFinished: state.testData.hasFinished
+  hasFinished: state.testData.hasFinished,
 })
 
 export class testForm extends Component {

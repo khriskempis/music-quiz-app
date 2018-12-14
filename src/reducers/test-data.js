@@ -1,5 +1,5 @@
 import {
-  SET_NUMBER_OF_QUESTONS,
+  SET_NUMBER_OF_QUESTIONS,
   SET_CURRENT_QUESTION,
   ADD_WRONG_ANSWER,
   ADD_CORRECT_ANSWER,
@@ -10,6 +10,7 @@ import {
   SET_HAS_STARTED,
   SET_HAS_FINISHED,
   SET_TIME_REMAINING,
+  SET_OUT_OF_TIME,
   TEST_REQUEST,
   TEST_SUCCESS,
   TEST_ERROR,
@@ -30,10 +31,11 @@ const initialState = {
   hasStarted: false,
   hasFinished: false,
   timeRemaining: null,
+  outOfTime: true,
   responses: [
-    "Great Job",
+    "Great Job!",
     "Keep It Up!",
-    "Amazing",
+    "Amazing!",
     "Are you A Musician?"
   ],
   data: [
@@ -58,6 +60,10 @@ export default function reducer(state = initialState, action) {
       return Object.assign({}, state, {
         currentQuestion: state.currentQuestion+= 1
       }) 
+    case SET_NUMBER_OF_QUESTIONS:
+      return Object.assign({}, state, {
+        numberOfQuestions: action.num
+      })
     case SET_CURRENT_CARD:
       return Object.assign({}, state, {
         currentCard: state.data[Math.floor(Math.random() * state.data.length)]
@@ -93,6 +99,10 @@ export default function reducer(state = initialState, action) {
       return Object.assign({}, state, {
         timeRemaining: action.time
       })
+    case SET_OUT_OF_TIME: 
+      return Object.assign({}, state, {
+        outOfTime: !state.outOfTime
+      })
     case TEST_REQUEST: 
       return Object.assign({}, state, {
         loading: true
@@ -113,12 +123,14 @@ export default function reducer(state = initialState, action) {
         currentQuestion: 1,
         hasStarted: !state.hasStarted,
         hasFinished: false,
+        outOfTime: false,
         wrongAnswers: [],
         correctAnswers: [],
       })
     case RESTART_TEST:
       return Object.assign({}, state, {
         currentQuestion: 1,
+        outOfTime: false,
         hasFinished: false,
         wrongAnswers: [],
         correctAnswers: [],

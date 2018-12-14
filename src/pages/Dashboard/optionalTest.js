@@ -6,7 +6,7 @@ import { Link } from 'react-router-dom';
 function optionalTest(props) {
   return (
     <div>
-      <Link to="/test"> 
+      <Link to="/test">
         <button 
           className="dashboard-test-button"
           onClick={e => props.onClick()}

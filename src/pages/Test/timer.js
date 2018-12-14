@@ -1,7 +1,7 @@
 import React from 'react';
 import {connect} from 'react-redux';
 
-import { setTimeRemaining } from '../../actions/test-data'
+import { setTimeRemaining, setOutOfTime } from '../../actions/test-data'
 
 const mapStateToProps = state => ({
   hasFinished: state.testData.hasFinished
@@ -13,7 +13,7 @@ export class timer extends React.Component {
     
     this.state = {
       seconds: '00',
-      value: 3,
+      value: 1,
     }
   }
 
@@ -45,6 +45,7 @@ export class timer extends React.Component {
 
     if(min === 0 && sec === 0){
       this.props.endTest();
+      this.props.dispatch(setOutOfTime());
       clearInterval(this.intervalHandle);
     }
 

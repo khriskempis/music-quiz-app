@@ -16,6 +16,7 @@ const mapStateToProps = state => ({
   isLoading: state.testData.loading,
   currentQuestion: state.testData.currentQuestion,
   isLoggedIn: state.auth.currentUser !== null,
+  outOfTime: state.testData.outOfTime
 })
 
 function Test(props) {
@@ -27,8 +28,12 @@ function Test(props) {
     return <Redirect to="/results" />
   }
 
+  if(props.outOfTime){
+    return <Redirect to="/results" />
+  }
+
   return (
-    <div className="test-page ">
+    <div className="test-page">
       <link href="https://fonts.googleapis.com/css?family=Muli:400,700" rel="stylesheet"></link>
       <Navigation />
       

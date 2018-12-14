@@ -14,6 +14,10 @@ p{
   margin: 0 0 1rem;
 }
 
+.test-page main {
+  margin-top: 2rem;
+}
+
 .test-container {
   position: relative;
   max-width: 400px;
@@ -51,7 +55,13 @@ p{
   width: 60%;
 }
 
+.correct-message {
+  margin-top: 1rem;
+  color: #8c8b8b;
+}
+
 .test-correct-note {
+  color: #000;
   font-size: 2em;
   display: block;
 }
@@ -88,10 +98,16 @@ p{
   right: 9%;
 }
 
-.white-keys {
+.see-results {
+  background-color: #4ebd4e;
+  border-radius: 4px;
+  color: #fff;
+}
+
+/* .white-keys {
   background-color: rgb(235, 235, 235);
   background-color:  hsl(0, 0%, 98%);
-}
+} */
 
 /* @media only screen and (min-width: 480px) and (max-width: 960px){
 

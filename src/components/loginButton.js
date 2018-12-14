@@ -15,7 +15,7 @@ export function button(props){
   return (
     <div className="dashboard-button-container">
       {props.isLoggedIn ? (
-        <Link to="/signin" >
+        <Link to="/" >
           <button 
             className="dashboard-button" 
             onClick={e => {props.dispatch(clearAuth())}}

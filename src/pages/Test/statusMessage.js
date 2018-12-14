@@ -19,7 +19,7 @@ function statusMessage(props) {
           </p>
           )
         }
-      <p>The Correct Answer was <span className="test-correct-note">{props.currentCard.note}</span></p>
+      <p className="correct-message">The Correct Answer was <span className="test-correct-note">{props.currentCard.note}</span></p>
     </div>
   );
 }
