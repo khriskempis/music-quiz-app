@@ -12,7 +12,7 @@ import './registerForm.css'
 const passwordLength = length({min: 6, max: 30});
 const matchesPassword = matches('password');
 
-class registerForm extends Component {
+export class registerForm extends Component {
   onSubmit(values){
     const {name, email, password} = values;
     const user = {name, email, password}
@@ -84,13 +84,6 @@ class registerForm extends Component {
           <button 
             className="register-button"
             type="submit">Sign Me Up!</button>
-
-          {/* {this.props.hasFinished ? (
-          <Link to="/dashboard" ><button type="submit">Sign me up!</button></Link>
-        ) : (
-          <Link to="/results" ><button type="submit">Sign me up!</button></Link>
-        )
-      } */}
         </form>
       </div>
     );

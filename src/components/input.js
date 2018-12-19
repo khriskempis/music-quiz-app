@@ -29,7 +29,7 @@ export default class Input extends React.Component {
                     ref={input => (this.input = input)}
                 />
                 <span className="bar"></span>
-                <label className={this.props.meta.visited ? "valid-input" : ''}htmlFor={this.props.input.name}>
+                <label className={this.props.meta.visited ? "valid-input" : ''} htmlFor={this.props.input.name}>
                     {this.props.label}
                 </label>
                 {error}
