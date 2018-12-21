@@ -1,6 +1,6 @@
 .sidebar-links {
   text-align: center;
-  font-size: 12px;
+  font-size: 14px;
   background-color: #ffffff;
   padding-top: 4rem;
   position: fixed;
@@ -65,9 +65,9 @@
   width: 30%;
 }
 
-.weekly-objectives li {
+.sidebar-links li {
   text-align: left;
-  padding-left: 3rem;
+  padding-left: 1rem;
 }
 
 @media only screen and (min-width: 750px){
@@ -77,6 +77,10 @@
     height: 200%;
     width: 30%;
     font-size: 14px;
+  }
+
+  .sidebar-links li {
+    padding-left: 3rem
   }
 
   .sidebar-left {

@@ -26,7 +26,7 @@ function calculateScore(score){
   return score * 100
 }
 
-function Results(props) {
+export function Results(props) {
   return (
     <div>
       <Navigation />

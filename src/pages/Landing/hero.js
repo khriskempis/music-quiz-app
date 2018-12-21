@@ -4,7 +4,7 @@ import {connect} from 'react-redux';
 
 import {fetchTestMiddle} from '../../actions/test-data'
 
-function hero(props){
+export function hero(props){
   return (
     <div>
       

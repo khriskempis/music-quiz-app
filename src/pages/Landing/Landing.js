@@ -16,7 +16,7 @@ const mapStateToProps = state => ({
   isLoggedIn: state.auth.currentUser !== null
 })
 
-class Landing extends Component {
+export class Landing extends Component {
   render() {
 
     if(this.props.isLoggedIn){

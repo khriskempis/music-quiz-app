@@ -31,7 +31,7 @@ const initialState = {
   hasStarted: false,
   hasFinished: false,
   timeRemaining: null,
-  outOfTime: true,
+  outOfTime: false,
   responses: [
     "Great Job!",
     "Keep It Up!",

@@ -13,7 +13,7 @@ const mapStateToProps = state => ({
 })
 
 
-function Register(props) {
+export function Register(props) {
 
   return (
 
@@ -27,14 +27,7 @@ function Register(props) {
         hasFinished={props.hasFinished}
         isLoggedIn={props.isLoggedIn}
         />
-
-      {/* {props.hasFinished ? (
-          <Link to="/dashboard" ><button type="submit">Sign me up!</button></Link>
-        ) : (
-          <Link to="/results" ><button type="submit">Sign me up!</button></Link>
-        )
-      } */}
-
+        
     </div>
   );
 }

@@ -14,7 +14,7 @@ const mapStateToProps = state => ({
   user: state.auth.currentUser
 })
 
-class Dashboard extends Component {
+export class Dashboard extends Component {
   componentDidMount(){
     this.props.dispatch(setHasStarted())
     this.props.dispatch(setHasFinished())
