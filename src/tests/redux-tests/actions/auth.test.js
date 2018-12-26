@@ -81,7 +81,16 @@ describe('login', ()=> {
 
     const dispatch = jest.fn();
     // return login(email, password)(dispatch).then(()=> {
-    //   expect(fetch).toHaveBeenCalledWith(`${API_SERVER_URL}/auth/login`)
+    //   expect(fetch).toHaveBeenCalledWith(`${API_SERVER_URL}/auth/login`, {
+    //     method: 'POST',
+    //      headers: {
+    //          'Content-Type': 'application/json'
+    //      },
+    //      body: JSON.stringify({
+    //          email,
+    //          password
+    //      })
+    //  })
     //   expect(dispatch).toHaveBeenCalledWith(login(email, password));
     // })
   })

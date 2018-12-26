@@ -1,4 +1,5 @@
 import * as _ from '../../../actions/test-data'
+import { API_SERVER_URL } from '../../../config';
 
 describe('fetchDataSuccess', ()=> {
   it('should return the action', ()=> {
@@ -138,3 +139,34 @@ describe('restartTest', ()=> {
     expect(action.type).toEqual(_.RESTART_TEST);
   });
 });
+
+describe('fetchTestType', ()=> {
+  it('should dispatch fetchTestType', ()=> {
+    const testData ={
+      data: []
+    }
+
+    global.fetch = jest.fn().mockImplementation(()=> 
+      Promise.resolve({
+        ok: true,
+        json() {
+          return testData
+        }
+      })
+    )
+    const test = {
+      type: "treble", 
+      testName: "Treble Clef",
+      numberOfQuestions: 10
+    }
+    const dispatch = jest.fn();
+    return _.fetchTestType(test)(dispatch).then(() => {
+      expect(fetch).toHaveBeenCalledWith(`${API_SERVER_URL}/data/type/${test.type}`, {
+        method: "GET",
+        headers: {
+          'Content-Type': 'application/json'
+        }
+      })
+    })
+  })
+})
