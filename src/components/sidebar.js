@@ -7,7 +7,7 @@ import {fetchTestMiddle} from '../actions/test-data';
 
 import './sidebar.css';
 
-class sidebar extends React.Component {
+export class sidebar extends React.Component {
 
   constructor(props){
     super(props);
@@ -37,7 +37,7 @@ class sidebar extends React.Component {
               <p>Welcome {this.props.user}!</p>
             </div>
 
-            <ul>
+            <ul className="sidebar-test-links">
               <li onClick={e => this.props.dispatch(fetchTestMiddle())}>
                 <Link to="/test">
                   Practice
@@ -58,11 +58,13 @@ class sidebar extends React.Component {
 
             <h4>Share your Thoughts</h4>
 
-            <p>
-              <a target="_blank" href="https://docs.google.com/forms/d/e/1FAIpQLSfGKmbKUDEnB5bGNSEOLkKG5bFp0XUy7y540DnI5UqwOmITvA/viewform?usp=sf_link">
-                Take a Survey
-              </a>
-            </p>
+            <ul>
+              <li>
+                <a target="_blank" href="https://docs.google.com/forms/d/e/1FAIpQLSfGKmbKUDEnB5bGNSEOLkKG5bFp0XUy7y540DnI5UqwOmITvA/viewform?usp=sf_link">
+                  Take a Survey
+                </a>
+              </li>
+            </ul>
           </div>
 
       </div>

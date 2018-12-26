@@ -5,7 +5,7 @@ import {fetchTestType, fetchTestMiddle} from '../../actions/test-data'
 
 import OptionalTestButton from './optionalTest';
 
-function options(props) {
+export function options(props) {
   return (
     <div className="options-buttons">
       <p>Choose one:</p>
