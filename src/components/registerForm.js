@@ -36,7 +36,6 @@ export class registerForm extends Component {
         <form 
           className="register-form"
           onSubmit={this.props.handleSubmit(values => this.onSubmit(values))}>
-      
 
             <Field 
               label="Name"
@@ -46,31 +45,22 @@ export class registerForm extends Component {
               component={Input}
               validate={[required, nonEmpty, isTrimmed]} />
             
-          
-
-          
             <Field 
               label="Email"
               name="email" 
               id="email" 
               type="text" 
               component={Input}
-              validate={[required, nonEmpty, isTrimmed]}  
-            />
-          
-
-          
+              validate={[required, nonEmpty, isTrimmed]} />
+                  
             <Field 
               label="Password"
               name="password" 
               id="password" 
               type="password" 
               component={Input}
-              validate={[required, passwordLength, isTrimmed]}  
-            />
-          
-
-          
+              validate={[required, passwordLength, isTrimmed]} />
+        
             <Field 
               label="Confirm Password"
               name="confirm-password" 
@@ -79,8 +69,7 @@ export class registerForm extends Component {
               component={Input}
               validate={[required, nonEmpty, matchesPassword]}
             />
-          
-
+        
           <button 
             className="register-button"
             type="submit">Sign Me Up!</button>
