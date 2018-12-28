@@ -9,12 +9,6 @@ import {Redirect, Link} from 'react-router-dom';
 import './signIn.css';
 
 export class SignIn extends React.Component {
-  constructor(props){
-    super(props)
-    this.state = {
-      value: ''
-    }
-  }
 
   onSubmit(values){
     return this.props.dispatch(login(values.email, values.password));
@@ -75,6 +69,11 @@ export class SignIn extends React.Component {
                   <button className="sign-in-register-button">Register</button> 
                 </Link>
             </form>
+            {/* <div className="demo-account">
+                
+                <button onClick={this.addDemoAccount}>Demo Account</button>
+                
+              </div> */}
           </div>
       </main>
 

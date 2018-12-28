@@ -2,6 +2,7 @@
 
 .landing h3 {
   font-size: 1em;
+  color: #3c3c3c;
 }
 
 .landing-page section {
@@ -145,7 +146,7 @@ li {
 
   .icon-container,
   .detail-section .detail {
-    width: 40%;
+    width: 35%;
   }
 
   .features-section {

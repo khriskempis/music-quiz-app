@@ -39,8 +39,8 @@ export default class Input extends React.Component {
                     {...this.props.input}
                     id={this.props.input.name}
                     type={this.props.type}
-                    value={this.state.value}
-                    onChange={this.handleChange}
+                    // value={this.state.value}
+                    // onChange={this.handleChange}
                     ref={input => this.input = input}
                 />
                 <span className="bar"></span>
