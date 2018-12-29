@@ -60,7 +60,7 @@ export class sidebar extends React.Component {
 
             <ul>
               <li>
-                <a target="_blank" href="https://docs.google.com/forms/d/e/1FAIpQLSfGKmbKUDEnB5bGNSEOLkKG5bFp0XUy7y540DnI5UqwOmITvA/viewform?usp=sf_link">
+                <a target="_blank" rel="noopener noreferrer" href="https://docs.google.com/forms/d/e/1FAIpQLSfGKmbKUDEnB5bGNSEOLkKG5bFp0XUy7y540DnI5UqwOmITvA/viewform?usp=sf_link">
                   Take a Survey
                 </a>
               </li>

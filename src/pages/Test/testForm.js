@@ -2,14 +2,11 @@ import './Test.css';
 
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { Redirect } from 'react-router-dom';
 
 import PianoKeyboard from './pianoKeyboard';
 import Timer from './timer';
 import QuestionNumber from './question-number';
 import NoteImg from './noteImg'
-import NextButton from './nextButton';
-import StatusMessage from './statusMessage';
 
 import { 
   setCurrentCard, 

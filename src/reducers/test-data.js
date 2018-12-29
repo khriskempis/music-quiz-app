@@ -14,7 +14,6 @@ import {
   TEST_REQUEST,
   TEST_SUCCESS,
   TEST_ERROR,
-  setHasStarted
 } from '../actions/test-data';
 
 const initialState = {

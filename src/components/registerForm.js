@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import {reduxForm, Field, focus} from 'redux-form';
-import { Redirect, Link } from 'react-router-dom';
+import { Redirect } from 'react-router-dom';
 
 import {registerUser} from '../actions/users';
 import {login} from '../actions/auth'

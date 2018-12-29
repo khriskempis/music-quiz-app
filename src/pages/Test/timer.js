@@ -3,10 +3,6 @@ import {connect} from 'react-redux';
 
 import { setTimeRemaining, setOutOfTime } from '../../actions/test-data'
 
-const mapStateToProps = state => ({
-  hasFinished: state.testData.hasFinished
-})
-
 export class timer extends React.Component {
   constructor(props) {
     super(props);

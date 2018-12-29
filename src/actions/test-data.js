@@ -1,4 +1,4 @@
-import { API_BASE_URL, API_SERVER_URL } from "../config";
+import { API_SERVER_URL } from "../config";
 
 export const FETCH_DATA_SUCCESS = "FETCH_DATA_SUCCESS";
 export const fetchDataSucces = data => ({

@@ -7,7 +7,7 @@ import './dashboard.css';
 import Sidebar from '../../components/sidebar';
 import Navigation from '../../components/navigationsScroll';
 import Selection from './selection';
-import { setHasFinished, setHasStarted, restartTest } from '../../actions/test-data';
+import { setHasFinished, setHasStarted } from '../../actions/test-data';
 
 const mapStateToProps = state => ({
   isLoggedIn: state.auth.currentUser !== null,

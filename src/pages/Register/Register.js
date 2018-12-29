@@ -1,6 +1,5 @@
 import React from 'react';
 import {connect} from 'react-redux';
-import { Link } from 'react-router-dom';
 
 import RegisterForm from '../../components/registerForm';
 import Navigation from '../../components/navigationsScroll';
