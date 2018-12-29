@@ -23,7 +23,7 @@ They may also choose to register for an account on the Landing page and be taken
 
 ![](./src/assets/photos/readMePhotos/Dashboard.png)
 
-The tests themseleves, cylce through different notes and provides a keyboard which they can press to designate a particular note. These tests are made for students who can practice both note naming and navigating a piano keyboard. The same keyboard area will alert them if they got the answer correct or incorrect.
+The tests themseleves cylce through different notes and provides a keyboard which they can press to designate a particular note. These tests are made for students who can practice both note naming and navigating a piano keyboard. The same keyboard area will alert them if they got the answer correct or incorrect.
 
 ![](./src/assets/photos/readMePhotos/Test.png)
 
