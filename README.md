@@ -25,11 +25,15 @@ They may also choose to register for an account on the Landing page and be taken
 
 ![](./src/assets/photos/readMePhotos/Dashboard.png)
 
-The tests themseleves, cylce through different notes and provides a keyboard which they can press to designate a particular note. These tests are made for students who can practice both note naming and navigating the keyboard. The same keyboard area will alery them if they got the answer correct or incorrect.
+The tests themseleves, cylce through different notes and provides a keyboard which they can press to designate a particular note. These tests are made for students who can practice both note naming and navigating a piano keyboard. The same keyboard area will alert them if they got the answer correct or incorrect.
 
 ![](./src/assets/photos/readMePhotos/Test.png)
 
 If a person navigates directly to the test taking portion, and completes the test, they will need to register for an account to view thier results. 
+
+![](./src/assets/photos/readMePhotos/Register.png)
+
+After creating account, the user will now be able to see the results of the test and see where they need to improve. There is also an option to retake the test.
 
 ![](./src/assets/photos/readMePhotos/Results.png)
 
