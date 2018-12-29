@@ -17,40 +17,28 @@ With this web app, a student can practice his or her sight-reading skills with d
 ----
 ##### User Flow
 
-![](./src/assets/photos/readMePhotos/Landing.png)
-
 When arriving to the landing page, a user can immedietely jump into the test taking portion of the application. They can also scroll down and view the current features of the app.
 
+![](./src/assets/photos/readMePhotos/Landing.png)
 
-![](./public/source-files/img/register-form.png)
+They may also choose to register for an account on the Landing page and be taken directly to the Dashboard. This is where they can choose between a different tests to practice their skills.
 
-You can also click the Sign In link at the top-right of the landing page which will take you to the Sign-in page where you must provide your username and password to access the website.
+![](./src/assets/photos/readMePhotos/Dashboard.png)
 
-![](./public/source-files/img/sign-in.png)
+The tests themseleves, cylce through different notes and provides a keyboard which they can press to designate a particular note. These tests are made for students who can practice both note naming and navigating the keyboard. The same keyboard area will alery them if they got the answer correct or incorrect.
 
-Once signed in, you will then have access to view the inventory.
-In the upper left hand corner is a button to add an item.
-To the right of each item are buttons to view/edit and delete items.
+![](./src/assets/photos/readMePhotos/Test.png)
 
-![](./public/source-files/img/main.png)
+If a person navigates directly to the test taking portion, and completes the test, they will need to register for an account to view thier results. 
 
-From the main page, you can edit each individual item.
-To update an item, simply click the update item button.
-A form will pop up and will display a dropdown menu of the fields in which you can edit along with a text area to input a value.
-Clicking the add button will include the field and value in the changes to be updated section.
-Once you are sure of the changes to be made, click the update fields button above the form and your changes will be immediately displayed.
-
-![](./public/source-files/img/item-display.png)
+![](./src/assets/photos/readMePhotos/Results.png)
 
 ----
 
 Technologies Used 
 
-- HTML
+- React
+- Redux
 - CSS
-- jQuery
 - Node.js
-- Express
-- Passport
 - MongoDB
-- Mongoose
