@@ -1,44 +1,56 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Music Tests
 
-## Available Scripts
+[Music Tests](https://stark-dusk-66511.herokuapp.com/)
 
-In the project directory, you can run:
+#### Description
 
-### `npm start`
+With this web app, a student can practice his or her sight-reading skills with different timed tests.
 
-Runs the app in the development mode.<br>
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+##### Features
 
-The page will reload if you make edits.<br>
-You will also see any lint errors in the console.
+-	create users to be able to sign in
+-	sign in using authentication
+- view thier own dashboard where one can navigate to different tests
+-	get results from the test they have taken
+- can fill out a survey of what they think
 
-### `npm test`
+----
+##### User Flow
 
-Launches the test runner in the interactive watch mode.<br>
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+![](./src/assets/photos/readMePhotos/Landing.png)
 
-### `npm run build`
+When arriving to the landing page, a user can immedietely jump into the test taking portion of the application. They can also scroll down and view the current features of the app.
 
-Builds the app for production to the `build` folder.<br>
-It correctly bundles React in production mode and optimizes the build for the best performance.
 
-The build is minified and the filenames include the hashes.<br>
-Your app is ready to be deployed!
+![](./public/source-files/img/register-form.png)
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+You can also click the Sign In link at the top-right of the landing page which will take you to the Sign-in page where you must provide your username and password to access the website.
 
-### `npm run eject`
+![](./public/source-files/img/sign-in.png)
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+Once signed in, you will then have access to view the inventory.
+In the upper left hand corner is a button to add an item.
+To the right of each item are buttons to view/edit and delete items.
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+![](./public/source-files/img/main.png)
 
-Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+From the main page, you can edit each individual item.
+To update an item, simply click the update item button.
+A form will pop up and will display a dropdown menu of the fields in which you can edit along with a text area to input a value.
+Clicking the add button will include the field and value in the changes to be updated section.
+Once you are sure of the changes to be made, click the update fields button above the form and your changes will be immediately displayed.
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+![](./public/source-files/img/item-display.png)
 
-## Learn More
+----
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+Technologies Used 
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+- HTML
+- CSS
+- jQuery
+- Node.js
+- Express
+- Passport
+- MongoDB
+- Mongoose
