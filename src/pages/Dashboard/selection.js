@@ -9,7 +9,6 @@ function selection(props) {
       <header>
         <h1>Take a {props.selection ? props.selection : ''} Test</h1>
       </header>
-
       <Options 
         numberOfQuestions={props.numberOfQuestions}
       />

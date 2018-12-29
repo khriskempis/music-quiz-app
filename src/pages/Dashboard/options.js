@@ -8,6 +8,7 @@ import OptionalTestButton from './optionalTest';
 export function options(props) {
   return (
     <div className="options-buttons">
+      <p>{`* Answer ${props.numberOfQuestions} questions in under 1 minute`}</p>
       <p>Choose one:</p>
       <OptionalTestButton 
         onClick={e => props.dispatch(fetchTestMiddle(

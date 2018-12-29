@@ -10,7 +10,7 @@
   margin: 2em auto;
 }
 
-.sign-in-button {
+.sign-in-button  {
   box-sizing: border-box;
   margin-bottom: 2px;
   padding: 10px 25px;
@@ -31,7 +31,8 @@
   background-color: #5260b1;
 }
 
-.sign-in-register-button {
+.sign-in-register-button,
+.demo-account-button {
   border: none;
   border-radius: 4px;
   cursor: pointer;
@@ -45,7 +46,8 @@
   transition: background-color .25s linear;
 }
 
-.sign-in-register-button:hover:enabled {
+.sign-in-register-button:hover:enabled,
+.demo-account-button:hover:enabled {
   background-color: #dfe4e8
 }
 
@@ -57,14 +59,36 @@
 }
 
 .demo-account {
-  display: flex;
-  width: 50%;
-  margin: 1em auto;
+  width: 100%;
 }
 
-.demo-account p {
+.demo-account-button:focus {
+  outline: 0;
+}
+
+.demo-credentials span {
   display: block;
-  width: 50%;
+}
+
+.demo-credentials {
+  display: flex;
+  width: 100%;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.demo-email-title,
+.demo-password-title {
+  width: 40%;
+  margin-right: 10%;
+  text-align: right;
+}
+
+.demo-email, 
+.demo-password {
+  width: 40%;
+  margin-left: 10%;
+  text-align: left;
 }
 
 @media only screen and (min-width: 960px){

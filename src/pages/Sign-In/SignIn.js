@@ -9,6 +9,16 @@ import {Redirect, Link} from 'react-router-dom';
 import './signIn.css';
 
 export class SignIn extends React.Component {
+  state = {
+    demoAccount: false
+  }
+
+  addDemoAccount = () => {
+    this.setState({
+      demoAccount: !this.state.demoAccount
+    })
+
+  }
 
   onSubmit(values){
     return this.props.dispatch(login(values.email, values.password));
@@ -69,11 +79,20 @@ export class SignIn extends React.Component {
                   <button className="sign-in-register-button">Register</button> 
                 </Link>
             </form>
-            {/* <div className="demo-account">
+            <div className="demo-account">
                 
-                <button onClick={this.addDemoAccount}>Demo Account</button>
-                
-              </div> */}
+                <button 
+                  className="demo-account-button"
+                  onClick={this.addDemoAccount}>View Demo Account</button>
+                {this.state.demoAccount && 
+                  <div className="demo-credentials">
+                    <p className="demo-email-title">Email:</p> 
+                    <p className="demo-email">demoAccount</p>
+                    <p className="demo-password-title">Password:</p> 
+                    <p className="demo-password">demoAccount</p>
+                  </div>
+                }
+              </div>
           </div>
       </main>
 

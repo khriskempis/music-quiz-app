@@ -18,7 +18,7 @@ export class Dashboard extends Component {
   componentDidMount(){
     this.props.dispatch(setHasStarted())
     this.props.dispatch(setHasFinished())
-    this.props.dispatch(restartTest());
+    // this.props.dispatch(restartTest());
   }
 
   render() {
