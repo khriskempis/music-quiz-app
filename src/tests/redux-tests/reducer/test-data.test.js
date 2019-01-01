@@ -21,7 +21,7 @@ describe('testDataReducer', ()=> {
       "Great Job!",
       "Keep It Up!",
       "Amazing!",
-      "Are you A Musician?"
+      "Are you a Musician?"
     ],
     data: [
       {
