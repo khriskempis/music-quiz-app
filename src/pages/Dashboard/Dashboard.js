@@ -16,7 +16,7 @@ const mapStateToProps = state => ({
 
 export class Dashboard extends Component {
   componentDidMount(){
-    this.props.dispatch(setHasStarted())
+    this.props.dispatch(setHasStarted(false))
     this.props.dispatch(setHasFinished())
     // this.props.dispatch(restartTest());
   }

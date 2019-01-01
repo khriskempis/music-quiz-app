@@ -2,11 +2,11 @@ import React from 'react';
 import {Link} from 'react-router-dom';
 import {connect} from 'react-redux';
 
-import {fetchTestMiddle, restartTest} from '../../actions/test-data'
+import {fetchTestMiddle, restartTest, fetchTestType} from '../../actions/test-data'
 
 const startTest = props => {
   props.dispatch(restartTest());
-  props.dispatch(fetchTestMiddle())
+  props.dispatch(fetchTestMiddle());
 }
 
 export function hero(props){
@@ -19,7 +19,7 @@ export function hero(props){
         <Link to="/test">
           <button 
             className="hero-button"
-            onClick={startTest(props)}>
+            onClick={e => startTest(props)}>
             Take a Test
           </button>
         </Link>

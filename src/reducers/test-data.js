@@ -28,14 +28,14 @@ const initialState = {
   wrongAnswers: [],
   correctAnswers: [],
   hasStarted: false,
-  hasFinished: false,
+  hasFinished: true,
   timeRemaining: null,
   outOfTime: false,
   responses: [
     "Great Job!",
     "Keep It Up!",
     "Amazing!",
-    "Are you A Musician?"
+    "Are you a Musician?"
   ],
   data: [
     {
@@ -88,7 +88,7 @@ export default function reducer(state = initialState, action) {
 
     case SET_HAS_STARTED:
       return Object.assign({}, state, {
-        hasStarted: !state.hasStarted
+        hasStarted: action.bool
       })
     case SET_HAS_FINISHED:
       return Object.assign({}, state, {
@@ -120,7 +120,7 @@ export default function reducer(state = initialState, action) {
         testName: action.testName,
         loading: false,
         currentQuestion: 1,
-        hasStarted: !state.hasStarted,
+        hasStarted: true,
         hasFinished: false,
         outOfTime: false,
         wrongAnswers: [],

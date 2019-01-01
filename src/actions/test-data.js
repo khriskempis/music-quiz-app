@@ -47,8 +47,9 @@ export const addCorrectAnswer = card => ({
 });
 
 export const SET_HAS_STARTED = "SET_HAS_STARTED";
-export const setHasStarted = () => ({
+export const setHasStarted = bool => ({
   type: SET_HAS_STARTED,
+  bool
 })
 
 export const SET_HAS_FINISHED = "SET_HAS_FINISHED";

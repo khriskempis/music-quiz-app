@@ -49,7 +49,7 @@ export class registerForm extends Component {
               label="Email"
               name="email" 
               id="email" 
-              type="text" 
+              type="email" 
               component={Input}
               validate={[required, nonEmpty, isTrimmed]} />
                   

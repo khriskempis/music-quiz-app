@@ -11,12 +11,18 @@ import Footer from '../../components/footer';
 import RegisterForm from '../../components/registerForm';
 
 import './landing.css';
+import { setHasFinished } from '../../actions/test-data';
 
 const mapStateToProps = state => ({
   isLoggedIn: state.auth.currentUser !== null
 })
 
 export class Landing extends Component {
+
+  componentDidMount(){
+    this.props.dispatch(setHasFinished());
+  }
+
   render() {
 
     if(this.props.isLoggedIn){
