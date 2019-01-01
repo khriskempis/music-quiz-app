@@ -14,7 +14,7 @@ describe('testDataReducer', ()=> {
     wrongAnswers: [],
     correctAnswers: [],
     hasStarted: false,
-    hasFinished: false,
+    hasFinished: true,
     timeRemaining: null,
     outOfTime: false,
     responses: [
