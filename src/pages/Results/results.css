@@ -70,6 +70,33 @@
   box-shadow: 0 5px 25px rgba(0, 0, 0, 0.18), 0 5px 5px rgba(0, 0, 0, 0.12);
 }
 
+.practice-details {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.practice-details .title {
+  width: 50%;
+  text-align: right;
+  color: rgb(117, 117, 117);
+}
+
+.practice-details .detail {
+  display: block;
+  width: 30%;
+  margin-left: 20%;
+  text-align: left;
+}
+
+
+.perfect-score {
+  text-align: center;
+  width: 100%;
+  color: green;
+}
+
 @media only screen and (min-width: 960px){
   
 .results-container{

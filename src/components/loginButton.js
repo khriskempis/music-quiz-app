@@ -5,6 +5,7 @@ import {Link} from 'react-router-dom';
 import {clearAuth} from '../actions/auth';
 
 import './loginButton.css';
+import { clearAuthToken } from '../local-storage';
 
 const mapStateToProps = state => ({
   isLoggedIn: state.auth.currentUser !== null
@@ -18,7 +19,10 @@ export function button(props){
         <Link to="/" >
           <button 
             className="dashboard-button" 
-            onClick={e => {props.dispatch(clearAuth())}}
+            onClick={e => {
+              props.dispatch(clearAuth())
+              clearAuthToken();
+              }}
             >Sign Out</button>
         </Link>
       ) : (

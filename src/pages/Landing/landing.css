@@ -116,7 +116,8 @@ li {
 
 .icon-container{
   margin: 2rem auto;
-  width: 40%;
+  width: 50%;
+  max-width: 200px;
 }
 
 /* === FEATURES SECTION === */
