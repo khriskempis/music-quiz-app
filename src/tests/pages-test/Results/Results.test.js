@@ -16,29 +16,29 @@ describe('<Results />', ()=> {
   it('should calculate correct score', ()=> {
     const correctAnswersArray = [1, 2, 3];
     const wrongAnswersArray = [1, 2, 3];
-    const score = (9/10);
+    const numberOfQuestions = 10;
     const wrapper = shallow(
       <Results 
         correctAnswers={correctAnswersArray}
         wrongAnswers={wrongAnswersArray}
-        score={score}/>);
+        numberOfQuestions={numberOfQuestions}/>);
     const scoreDisplay = wrapper.find('.score-display').text();
 
-    expect(scoreDisplay).toEqual(`${score * 100}%`);
+    expect(scoreDisplay).toEqual(`${(correctAnswersArray.length/numberOfQuestions) * 100}%`)
   });
 
   it('should calculate 0 score', ()=> {
-    const correctAnswersArray = [1, 2, 3];
+    const correctAnswersArray = [];
     const wrongAnswersArray = [1, 2, 3];
-    const score = 0;
+    const numberOfQuestions = 10;
     const wrapper = shallow(
       <Results 
         correctAnswers={correctAnswersArray}
         wrongAnswers={wrongAnswersArray}
-        score={score}/>);
+        numberOfQuestions={numberOfQuestions}/>);
     const scoreDisplay = wrapper.find('.score-display').text();
 
-    expect(scoreDisplay).toEqual(`${score}%`);
+    expect(scoreDisplay).toEqual(`${(correctAnswersArray.length/numberOfQuestions) * 100}%`)
   });
 
   it('should run callback when clicked', ()=> {

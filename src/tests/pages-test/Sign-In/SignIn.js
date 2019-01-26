@@ -2,6 +2,7 @@ import React from 'react';
 import {shallow} from 'enzyme';
 
 import SignIn from '../../../pages/Sign-In/SignIn';
+import RequireLogin from '../../../components/requireLogin'
 
 describe('<SignIn />', ()=> {
   it('should render without crashing', ()=> {
