@@ -21,6 +21,15 @@ export function options(props) {
       <OptionalTestButton 
         onClick={e => props.dispatch(fetchTestType(
           {
+            type: "cmajor", 
+            testName: "C Major",
+            numberOfQuestions: props.numberOfQuestions
+          }))} 
+        testName={"C Major"}/>
+
+      <OptionalTestButton 
+        onClick={e => props.dispatch(fetchTestType(
+          {
             type: "treble", 
             testName: "Treble Clef",
             numberOfQuestions: props.numberOfQuestions
