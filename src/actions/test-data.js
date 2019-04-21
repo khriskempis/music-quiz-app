@@ -68,6 +68,13 @@ export const setOutOfTime = () => ({
   type: SET_OUT_OF_TIME
 })
 
+// practice test or regular test
+export const TEST_TYPE = "TEST_TYPE";
+export const testType = selection => ({
+  type: TEST_TYPE,
+  selection
+})
+
 export const TEST_REQUEST = "TEST_REQUEST";
 export const testRequest = () => ({
   type: TEST_REQUEST
@@ -117,6 +124,7 @@ export const fetchTestType = test => dispatch => {
       dispatch(testSuccess(testData))
       dispatch(setNumberOfQuestions(test.numberOfQuestions))
       dispatch(beginTest(test.testName))
+      dispatch(testType(test.testType))
     })
     .catch(err => {
       dispatch(testError(err));

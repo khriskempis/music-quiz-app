@@ -21,6 +21,7 @@ const mapStateToProps = state => ({
   currentCard: state.testData.currentCard,
   hasStarted: state.testData.hasStarted,
   hasFinished: state.testData.hasFinished,
+  testType: state.testData.testType
 })
 
 export class testForm extends Component {
@@ -77,11 +78,12 @@ export class testForm extends Component {
     return (
       <div>
         <div className="status-bar">
+          {this.props.testType === "Test" &&
           <Timer 
             hasAnswered={this.state.hasAnswered}
             hasStarted={this.props.hasStarted}
             hasFinished={this.props.hasFinished}
-            endTest={e => this.endTest()}/>
+            endTest={e => this.endTest()}/>}
 
           <QuestionNumber />
         </div>

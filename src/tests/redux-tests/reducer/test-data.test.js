@@ -17,6 +17,7 @@ describe('testDataReducer', ()=> {
     hasFinished: true,
     timeRemaining: null,
     outOfTime: false,
+    testType: "practice",
     responses: [
       "Great Job!",
       "Keep It Up!",

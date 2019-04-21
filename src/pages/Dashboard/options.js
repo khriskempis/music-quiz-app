@@ -8,12 +8,19 @@ import OptionalTestButton from './optionalTest';
 export function options(props) {
   return (
     <div className="options-buttons">
-      <p>{`* Answer ${props.numberOfQuestions} questions in under 1 minute`}</p>
+      <p>{props.selection === "Practice" ? (
+        `* Answer ${props.numberOfQuestions} questions at your own pace.`
+          ) : (
+        `* Answer ${props.numberOfQuestions} in under 1 minute.`
+          )}</p>
       <p>Choose one:</p>
       <OptionalTestButton 
-        onClick={e => props.dispatch(fetchTestMiddle(
+        onClick={e => props.dispatch(fetchTestType(
           {
-            numberOfQuestions: props.numberOfQuestions
+            type: "middle",
+            testName: "Middle C Position",
+            numberOfQuestions: props.numberOfQuestions,
+            testType: props.selection
           }
         ))} 
         testName={"Middle C Position"}/>
@@ -21,9 +28,20 @@ export function options(props) {
       <OptionalTestButton 
         onClick={e => props.dispatch(fetchTestType(
           {
+            type: "cmajor", 
+            testName: "C Major",
+            numberOfQuestions: props.numberOfQuestions,
+            testType: props.selection
+          }))} 
+        testName={"C Major"}/>
+
+      <OptionalTestButton 
+        onClick={e => props.dispatch(fetchTestType(
+          {
             type: "treble", 
             testName: "Treble Clef",
-            numberOfQuestions: props.numberOfQuestions
+            numberOfQuestions: props.numberOfQuestions,
+            testType: props.selection
           }))} 
         testName={"Treble Clef"}/>
 
@@ -32,7 +50,8 @@ export function options(props) {
           {
             type: "bass", 
             testName: "Bass Clef",
-            numberOfQuestions: props.numberOfQuestions
+            numberOfQuestions: props.numberOfQuestions,
+            testType: props.selection
           }))} 
         testName={"Bass Clef"}/>
 
