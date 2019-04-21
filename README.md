@@ -1,6 +1,6 @@
 ## Music Tests
 
-[View Site](https://stark-dusk-66511.herokuapp.com/)
+[View Site](www.music-tests.com)
 
 #### Description
 
