@@ -15,11 +15,12 @@ const mapStateToProps = state => ({
   wrongAnswers: state.testData.wrongAnswers,
   timeRemaining: state.testData.timeRemaining,
   hasFinished: state.testData.hasFinished,
+  testType: state.testData.testType,
   isLoggedIn: state.auth.currentUser !== null
 })
 
 const calculateScore = (correctAnswers, numberOfQuestions) => {
-  return (correctAnswers/numberOfQuestions) * 100
+  return Math.floor((correctAnswers/numberOfQuestions) * 100)
 }
 
 const calculateWrongAnswers = wrongAnswers => {
@@ -51,9 +52,12 @@ export function Results(props) {
         <div className="score-details">
           <p className="title">Correct Notes:</p>
           <p className="correct-notes detail">{props.correctAnswers.length}/{props.numberOfQuestions}</p>
-          <p className="title">Time Left:</p>
-          <p className="time-taken detail">{props.timeRemaining}</p>
-          {props.wrongAnswers.length !== 0 ? ( 
+          {props.testType === "Test" && 
+            <>
+              <p className="title">Time Left:</p>
+              <p className="time-taken detail">{props.timeRemaining}</p>
+            </>}
+          {calculateScore(props.correctAnswers.length, props.numberOfQuestions) !== 100 ? ( 
             <div className="practice-details">
               <p className="title">Need to Practice</p>
               <p className="quickest-response detail">{calculateWrongAnswers(props.wrongAnswers)}</p>

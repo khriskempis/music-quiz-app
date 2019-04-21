@@ -14,6 +14,7 @@ import {
   TEST_REQUEST,
   TEST_SUCCESS,
   TEST_ERROR,
+  TEST_TYPE
 } from '../actions/test-data';
 
 const initialState = {
@@ -31,6 +32,7 @@ const initialState = {
   hasFinished: true,
   timeRemaining: null,
   outOfTime: false,
+  testType: "practice",
   responses: [
     "Great Job!",
     "Keep It Up!",
@@ -101,6 +103,10 @@ export default function reducer(state = initialState, action) {
     case SET_OUT_OF_TIME: 
       return Object.assign({}, state, {
         outOfTime: !state.outOfTime
+      })
+    case TEST_TYPE: 
+      return Object.assign({}, state, {
+        testType: action.selection
       })
     case TEST_REQUEST: 
       return Object.assign({}, state, {

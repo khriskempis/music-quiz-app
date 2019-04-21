@@ -46,6 +46,7 @@ export class Dashboard extends Component {
           <Selection 
           numberOfQuestions={20}
           class={"test test-area"}
+          selection={"Test"}
           />
         </section>
         
