@@ -1,6 +1,6 @@
 ## Music Tests
 
-[View Site](https://www.music-tests.com)
+[View Site](http://www.music-tests.com)
 
 #### Description
 
