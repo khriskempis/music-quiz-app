@@ -1,4 +1,6 @@
 import React from 'react';
+import withTransition from './withTransition';
+import {Spring} from 'react-spring/renderprops';
 
 function img(props) {
   return (
@@ -9,4 +11,4 @@ function img(props) {
 }
 
 
-export default img
+export default withTransition(img)
