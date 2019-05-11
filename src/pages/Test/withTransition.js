@@ -9,8 +9,8 @@ const withTransition = WrappedComponent => {
         <Transition
           items={show}
           from={{opacity: 0}}
-          enter={{ opacity: 1}}>
-          leave={{opacity: 0}}
+          enter={{ opacity: 1}}
+          leave={{opacity: 0}}>
           {show => show && 
           (transProps => (
             <div style={transProps}>
