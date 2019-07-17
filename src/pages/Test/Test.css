@@ -1,12 +1,12 @@
 body {
- font-family: 'Muli', sans-serif;
+  font-family: "Muli", sans-serif;
 }
 
-.test-page h3 { 
+.test-page h3 {
   font-size: 2em;
 }
 
-p{
+p {
   margin-top: 0;
 }
 
@@ -34,11 +34,10 @@ p{
   height: 15rem;
 }
 
-
 /* === STATUS MESSAGE === */
 
 .hidden {
-  opacity: 0
+  opacity: 0;
 }
 
 .status-bar {
@@ -76,8 +75,6 @@ p{
   color: red;
 }
 
-
-
 .answers-container {
   margin-bottom: 2rem;
 }
@@ -91,7 +88,7 @@ p{
   padding: 2%;
   top: 35%;
   right: 10%;
-  transition: right .3s ease;
+  transition: right 0.3s ease;
 }
 
 .test-button:hover {
@@ -113,14 +110,32 @@ p{
 
 } */
 
-@media only screen and (min-width: 960px){
-
+@media only screen and (min-width: 960px) {
   .status-bar {
     max-width: 50%;
   }
-  
+
   .test-status-message {
     width: 60%;
   }
+}
 
+/* NOTE IMG ANIMATIONS */
+
+.note-img-animation-enter {
+  opacity: 0;
+}
+
+.note-img-animation-enter-active {
+  opacity: 1;
+  transition: opacity 200ms;
+}
+
+.note-img-animation-exit {
+  opacity: 1;
+}
+
+.note-img-animation-exit-active {
+  opacity: 0;
+  transition: opacity 200ms;
 }
