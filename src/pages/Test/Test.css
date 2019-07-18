@@ -128,7 +128,7 @@ p {
 
 .note-img-animation-enter-active {
   opacity: 1;
-  transition: opacity 200ms;
+  transition: opacity 2000ms;
 }
 
 .note-img-animation-exit {
@@ -137,5 +137,5 @@ p {
 
 .note-img-animation-exit-active {
   opacity: 0;
-  transition: opacity 200ms;
+  transition: opacity 2000ms;
 }

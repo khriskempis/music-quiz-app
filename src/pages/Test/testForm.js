@@ -2,7 +2,6 @@ import "./Test.css";
 
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import CSSTransition from "react-transition-group";
 
 import PianoKeyboard from "./pianoKeyboard";
 import Timer from "./timer";
@@ -91,13 +90,10 @@ export class testForm extends Component {
         </div>
 
         <form className="test-container" onSubmit={e => e.preventDefault()}>
-          <CSSTransition
-            in={true}
-            timeout={200}
-            classNames="note-img-animation"
-          >
-            <NoteImg imgUrl={this.props.currentCard.imgUrl} />
-          </CSSTransition>
+          <NoteImg
+            imgUrl={this.props.currentCard.imgUrl}
+            hasAnswered={this.state.hasAnswered}
+          />
 
           <PianoKeyboard
             isCorrect={this.state.isCorrect}
