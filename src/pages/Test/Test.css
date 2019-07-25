@@ -123,19 +123,23 @@ p {
 /* NOTE IMG ANIMATIONS */
 
 .note-img-animation-enter {
-  opacity: 0;
+  opacity: 1;
+  transform: translate(0, 0);
 }
 
 .note-img-animation-enter-active {
-  opacity: 1;
-  transition: opacity 2000ms;
+  opacity: 0;
+  transform: translate(10em, 0);
+  transition: 10s ease-in-out;
 }
 
 .note-img-animation-exit {
-  opacity: 1;
+  opacity: 0;
+  transform: translate(0);
 }
 
 .note-img-animation-exit-active {
-  opacity: 0;
-  transition: opacity 2000ms;
+  opacity: 1;
+  transform: translate(10em);
+  transition: 5s ease-in;
 }

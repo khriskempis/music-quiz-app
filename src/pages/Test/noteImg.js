@@ -1,5 +1,5 @@
 import React from "react";
-import { CSSTransition } from "react-transition-group";
+import { TweenLite, Power4 } from "gsap/all";
 
 class img extends React.Component {
   constructor(props) {
@@ -7,27 +7,34 @@ class img extends React.Component {
     this.state = {
       changeImg: false
     };
+    this.imgElement = null;
+    this.imgTween = null;
   }
+
+  toggleComponent() {
+    this.setState({ changeImg: !this.state.changeImg });
+  }
+
   componentDidUpdate(prevProps) {
-    if (this.props.hasAnswered !== prevProps.hasAnswered) {
-      this.setState({
-        changeImg: !this.state.changeImg
+    if (this.props.imgUrl !== prevProps.imgUrl) {
+      this.imgTween = TweenLite.from(this.imgElement, 0.5, {
+        y: -200,
+        easeIn: Power4
       });
     }
+    // if (this.props.currentQuestion !== prevProps.currentQuestion) {
+    //   this.imgTween = TweenLite.from(this.imgElement, 0.5, {
+    //     y: -200,
+    //     easeIn: Power4
+    //   });
+    // }
   }
 
   render() {
     return (
-      <CSSTransition
-        in={this.state.changeImg}
-        appear={true}
-        timeout={2000}
-        classNames="note-img-animation"
-      >
-        <div className="test-question">
-          <img src={this.props.imgUrl} alt="music note" />
-        </div>
-      </CSSTransition>
+      <div className="test-question" ref={div => (this.imgElement = div)}>
+        <img src={this.props.imgUrl} alt="music note" />
+      </div>
     );
   }
 }

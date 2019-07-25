@@ -2,6 +2,7 @@ import "./Test.css";
 
 import React, { Component } from "react";
 import { connect } from "react-redux";
+import { CSSTransition } from "react-transition-group";
 
 import PianoKeyboard from "./pianoKeyboard";
 import Timer from "./timer";
@@ -21,7 +22,8 @@ const mapStateToProps = state => ({
   currentCard: state.testData.currentCard,
   hasStarted: state.testData.hasStarted,
   hasFinished: state.testData.hasFinished,
-  testType: state.testData.testType
+  testType: state.testData.testType,
+  currentQuestion: state.testData.currentQuestion
 });
 
 export class testForm extends Component {
@@ -91,6 +93,7 @@ export class testForm extends Component {
 
         <form className="test-container" onSubmit={e => e.preventDefault()}>
           <NoteImg
+            currentQuestion={this.props.currentQuestion}
             imgUrl={this.props.currentCard.imgUrl}
             hasAnswered={this.state.hasAnswered}
           />
