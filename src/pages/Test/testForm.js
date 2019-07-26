@@ -94,7 +94,7 @@ export class testForm extends Component {
         <form className="test-container" onSubmit={e => e.preventDefault()}>
           <NoteImg
             currentQuestion={this.props.currentQuestion}
-            imgUrl={this.props.currentCard.imgUrl}
+            noteId={this.props.currentCard.noteId}
             hasAnswered={this.state.hasAnswered}
           />
 
