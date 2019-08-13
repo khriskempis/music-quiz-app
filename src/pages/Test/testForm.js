@@ -17,6 +17,21 @@ import {
   setHasFinished
 } from "../../actions/test-data";
 
+function importAll(r) {
+  let images = {};
+  r.keys().map((item, index) => {
+    images[item.replace("./", "")] = r(item);
+  });
+  return images;
+}
+
+const bassImages = importAll(
+  require.context("../../assets/BASS/JPGs", false, /\.(png|jpe?g|svg)$/)
+);
+const trebleImages = importAll(
+  require.context("../../assets/TREBLE/JPGs", false, /\.(png|jpe?g|svg)$/)
+);
+
 const mapStateToProps = state => ({
   data: state.testData.data,
   currentCard: state.testData.currentCard,
@@ -71,6 +86,24 @@ export class testForm extends Component {
     }
   }
 
+  findImg(bassObj, trebleObj, noteId) {
+    const bassArr = Object.keys(bassObj);
+    const trebleArr = Object.keys(trebleObj);
+
+    let bassImg = bassArr.find(item => {
+      return item.slice(0, 2) === noteId;
+    });
+
+    let trebleImg = trebleArr.find(item => {
+      return item.slice(0, 2) === noteId;
+    });
+
+    if (noteId === "C4T") {
+      trebleImg = "C4.jpg";
+    }
+    return bassObj[bassImg] || trebleObj[trebleImg];
+  }
+
   endTest() {
     this.props.dispatch(setHasFinished());
   }
@@ -94,7 +127,11 @@ export class testForm extends Component {
         <form className="test-container" onSubmit={e => e.preventDefault()}>
           <NoteImg
             currentQuestion={this.props.currentQuestion}
-            noteId={this.props.currentCard.noteId}
+            img={this.findImg(
+              bassImages,
+              trebleImages,
+              this.props.currentCard.noteId
+            )}
             hasAnswered={this.state.hasAnswered}
           />
 
