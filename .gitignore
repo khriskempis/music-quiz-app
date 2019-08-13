@@ -22,5 +22,5 @@ npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 
-src/assets/BASS/
-src/assets/TREBLE/
+src/assets/BASS/PNGs
+src/assets/TREBLE/PNGs
