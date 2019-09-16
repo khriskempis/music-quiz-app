@@ -1,0 +1,4 @@
+(npm install -g svg-to-react-cli)
+Navigate to the directory that contains your svg’s.
+To process all the svg’s in the file, run svgtoreact dir
+To process a single file, run svgtoreact <svg file> <new component name>

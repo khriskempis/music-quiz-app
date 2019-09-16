@@ -176,11 +176,37 @@ li {
   height: 100%;
 }
 
-.dashboard-section .dashboard-content {
+.dashboard-section .hero {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  text-align: left;
+  width: 80%;
+  margin: 30px auto;
+  padding: 30px;
+  border: 1px solid #aaa;
+  font-size: 14px;
+}
+
+.dashboard-section .hero .gear-icon {
+  width: 50px;
+  height: 50px;
+}
+
+.dashboard-section .hero .gear-icon h3 {
+  margin: 0;
+  font-size: 12px;
+  text-align: center;
+}
+
+.dashboard-section .content {
   width: 100%;
 }
 
-.dashboard-section .dashboard-content nav ul {
+.dashboard-section .content nav ul {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -192,8 +218,13 @@ li {
   border-bottom: solid 0.5px #aaa;
 }
 
-.dashboard-section .dashboard-content nav ul li {
+.dashboard-section .content nav ul li {
   margin: 0 10px;
+}
+
+.dashboard-section .content nav ul li a {
+  text-decoration: none;
+  color: black;
 }
 
 .test-area {

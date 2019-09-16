@@ -1,6 +1,14 @@
 import React from "react";
 
-export default class Practice extends React.Component {
+export function Hero() {
+  return (
+    <div>
+      <h1>Practice Hero</h1>
+    </div>
+  );
+}
+
+export class Practice extends React.Component {
   render() {
     return (
       <div>
@@ -9,3 +17,5 @@ export default class Practice extends React.Component {
     );
   }
 }
+
+export default { Practice, Hero };

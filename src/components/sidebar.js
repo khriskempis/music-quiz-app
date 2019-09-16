@@ -1,6 +1,6 @@
 import React from "react";
 import { connect } from "react-redux";
-import { Link } from "react-router-dom";
+import { BrowserRouter as Router, Link } from "react-router-dom";
 
 import MenuIcon from "../assets/icons/menu";
 import { fetchTestMiddle } from "../actions/test-data";
