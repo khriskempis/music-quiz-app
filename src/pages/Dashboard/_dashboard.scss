@@ -1,12 +1,13 @@
-.dashboard {
- display: flex;
+.dashboard-section {
+  nav {
+    display: flex;
+  }
 }
 
 .test-area {
   margin: 3rem auto;
   width: 80%;
-  border-radius: 4px; 
-  /* border: 1px solid grey;  */
+  border-radius: 4px;
   box-shadow: 1px 2px 10px rgb(206, 206, 206);
   padding: 4%;
 }
@@ -17,23 +18,29 @@
   padding: 5%;
   background-size: cover;
   background-repeat: no-repeat;
-  width: 100%; 
+  width: 100%;
 }
 
-.practice-test header{
-  background-image: linear-gradient(rgba(99, 99, 99, 0.801), rgba(127, 128, 129, 0.589)),
+.practice-test header {
+  background-image: linear-gradient(
+      rgba(99, 99, 99, 0.801),
+      rgba(127, 128, 129, 0.589)
+    ),
     url(https://res.cloudinary.com/khrisraymond/image/upload/v1544163323/imgs/music-test/sheetmusic.jpg);
 }
 
 .test header {
-  background-image: linear-gradient(rgba(99, 99, 99, 0.801), rgba(127, 128, 129, 0.589)),
+  background-image: linear-gradient(
+      rgba(99, 99, 99, 0.801),
+      rgba(127, 128, 129, 0.589)
+    ),
     url(https://res.cloudinary.com/khrisraymond/image/upload/v1544163328/imgs/music-test/classroom.jpg);
 }
 
 .options-buttons {
   margin: 10% 0 2%;
   font-size: 12px;
-  color: rgb(173, 172, 172)
+  color: rgb(173, 172, 172);
 }
 
 .options-buttons p {
@@ -45,17 +52,17 @@
   box-sizing: border-box;
   margin: 4% 0;
   padding: 10px 25px;
-  border: 2px solid rgb(243, 243, 243);;
+  border: 2px solid rgb(243, 243, 243);
   border-radius: 4px;
-  background-color: rgb(243, 243, 243);;
+  background-color: rgb(243, 243, 243);
   color: rgb(84, 97, 139);
   cursor: pointer;
-  font-size: 1.em;
+  font-size: 1em;
   font-weight: 600;
   text-transform: uppercase;
 }
 
-@media only screen and (min-width: 750px){
+@media only screen and (min-width: 750px) {
   .test-area {
     width: 45%;
     margin-left: 40%;
