@@ -38,26 +38,19 @@ export class Dashboard extends Component {
     return (
       <div>
         <Navigation />
-
-        <Sidebar user={this.props.user.name} />
-
         <section className="dashboard-section">
           <Router>
-            <div>
+            <div className="dashboard-content">
               <nav>
                 <ul>
                   <li>
                     <Link to={`${this.props.match.url}/`}>Activity</Link>
                   </li>
-                </ul>
-                <ul>
                   <li>
                     <Link to={`${this.props.match.url}/practice`}>
                       Practice Area
                     </Link>
                   </li>
-                </ul>
-                <ul>
                   <li>
                     <Link to={`${this.props.match.url}/test`}>Test Area</Link>
                   </li>
@@ -78,6 +71,7 @@ export class Dashboard extends Component {
               ></Route>
             </div>
           </Router>
+          <Sidebar user={this.props.user.name} />
         </section>
       </div>
     );
