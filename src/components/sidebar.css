@@ -4,7 +4,6 @@
   background-color: #ffffff;
   padding-top: 4rem;
   position: fixed;
-  left: 0;
   top: 0;
   z-index: 51;
   width: 50%;
@@ -14,8 +13,8 @@
   box-shadow: 0px 10px 10px rgb(206, 206, 206);
 }
 
-.sidebar-left {
-  left: -51%;
+.sidebar-right {
+  right: 51%;
 }
 
 .sidebar-links ul {
@@ -24,14 +23,13 @@
 }
 
 .sidebar-links ul::after {
-  content: ' ';
+  content: " ";
   display: block;
   margin: 3rem auto;
   background-color: grey;
   border-bottom: 1px solid gray;
   width: 80%;
   height: 10%;
-
 }
 
 .sidebar-links li {
@@ -43,7 +41,7 @@
   width: 8rem;
   text-align: center;
   margin: 0.5rem;
-  background-color: rgb(211, 211, 211)
+  background-color: rgb(211, 211, 211);
 }
 
 .user-image {
@@ -59,7 +57,7 @@
   border-radius: 4px;
   background-color: rgb(118, 160, 202);
   padding: 5% 0;
-  cursor: pointer; 
+  cursor: pointer;
   position: absolute;
   right: -66px;
   bottom: -50px;
@@ -71,17 +69,18 @@
   padding-left: 1rem;
 }
 
-@media only screen and (min-width: 750px){
+@media only screen and (min-width: 750px) {
   .sidebar-links {
     position: absolute;
-    left: 0;
+    right: 0;
     height: 200%;
     width: 30%;
+    max-width: 300px;
     font-size: 14px;
   }
 
   .sidebar-links li {
-    padding-left: 3rem
+    padding-left: 3rem;
   }
 
   .sidebar-left {

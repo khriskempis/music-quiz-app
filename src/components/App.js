@@ -1,22 +1,28 @@
-import React from 'react';
-import {connect} from 'react-redux'
-import {BrowserRouter as Router, Route, withRouter, Switch } from 'react-router-dom';
+import React from "react";
+import { connect } from "react-redux";
+import {
+  BrowserRouter as Router,
+  Route,
+  withRouter,
+  Switch
+} from "react-router-dom";
 
-import Landing from '../pages/Landing/Landing';
-import Register from '../pages/Register/Register';
-import SignIn from '../pages/Sign-In/SignIn';
-import Test from '../pages/Test/Test';
+import Landing from "../pages/Landing/Landing";
+import Register from "../pages/Register/Register";
+import SignIn from "../pages/Sign-In/SignIn";
+import Test from "../pages/Test/Test";
 import Dashboard from "../pages/Dashboard/Dashboard";
 import Results from "../pages/Results/Results";
 
-import { refreshAuthToken } from '../actions/auth';
+import { refreshAuthToken } from "../actions/auth";
 
-import './App.css';
+// import "./App.css";
+import "../css/main.css";
 
 const mapStateToProps = state => ({
   hasAuthToken: state.auth.authToken !== null,
   loggedIn: state.auth.currentUser !== null
-})
+});
 
 class App extends React.Component {
   componentDidUpdate(prevProps) {
@@ -64,9 +70,8 @@ class App extends React.Component {
               <Route path="/results" component={Results} />
               <Route exact render={() => <h1>404 Page Does Not Exist!</h1>} />
             </Switch>
-            
           </main>
-        </div>  
+        </div>
       </Router>
     );
   }

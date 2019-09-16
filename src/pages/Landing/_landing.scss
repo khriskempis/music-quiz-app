@@ -1,12 +1,9 @@
-
-
 .landing h3 {
-  font-size: 1em;
   color: #3c3c3c;
 }
 
 .landing-page section {
-  min-height: 200px; 
+  min-height: 200px;
   padding: 6% 0;
   background-color: #fff;
 }
@@ -14,7 +11,6 @@
 /* .landing-page section:last-child {
   background-color: ;
 } */
-
 
 li {
   list-style: none;
@@ -26,7 +22,10 @@ li {
   padding: 12% 8%;
   margin-top: 3rem;
   height: 60vh;
-  background-image: linear-gradient(rgba(255, 253, 253, 0.863), rgba(243, 243, 243, 0.438)),
+  background-image: linear-gradient(
+      rgba(255, 253, 253, 0.863),
+      rgba(243, 243, 243, 0.438)
+    ),
     url(https://res.cloudinary.com/khrisraymond/image/upload/v1544563412/imgs/music-test/hero-photo.jpg);
   background-size: cover;
 }
@@ -36,17 +35,16 @@ li {
 }
 
 .hero-section {
-  background-color: #fbfbfb; 
+  background-color: #fbfbfb;
 }
 
 .hero-section h3 {
-  margin-bottom: 1.1em;;
+  margin-bottom: 1.1em;
 }
 
 .hero-section p {
-  margin-bottom: 2em
+  margin-bottom: 2em;
 }
-
 
 .hero-button {
   box-sizing: border-box;
@@ -57,25 +55,24 @@ li {
   background-color: #5c6ac4;
   color: #fff;
   cursor: pointer;
-  font-size: 1.em;
+  font-size: 1em;
   font-weight: 600;
   text-transform: uppercase;
-  transition: box-shadow .25s linear;
+  transition: box-shadow 0.25s linear;
 }
 
 .hero-button:hover {
   box-shadow: 0 5px 20px rgba(0, 0, 0, 0.18), 0 5px 5px rgba(0, 0, 0, 0.12);
 }
 
-@media only screen and (min-width: 960px){
-  
+@media only screen and (min-width: 960px) {
   .landing-page header {
     margin-top: 4rem;
     height: 50vh;
   }
 
   .landing-page section {
-    padding: 6% 0 0; 
+    padding: 6% 0 0;
   }
 }
 
@@ -114,7 +111,7 @@ li {
   width: 60%;
 }
 
-.icon-container{
+.icon-container {
   margin: 2rem auto;
   width: 50%;
   max-width: 200px;
@@ -122,7 +119,7 @@ li {
 
 /* === FEATURES SECTION === */
 
-.landing-page section:nth-child(3){
+.landing-page section:nth-child(3) {
   background-color: #f1f2fda6;
   padding-bottom: 8%;
 }
@@ -140,7 +137,7 @@ li {
   font-size: 1.5em;
 }
 
-@media only screen and (min-width: 960px){
+@media only screen and (min-width: 960px) {
   .detail-section .detail {
     margin: 6rem auto 0;
   }
@@ -158,5 +155,4 @@ li {
   .features-section ul {
     padding-left: 5rem;
   }
-
 }
